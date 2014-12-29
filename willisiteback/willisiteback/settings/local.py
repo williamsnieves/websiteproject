@@ -1,36 +1,22 @@
-"""
-Django settings for willisiteback project.
+from .base import *
+# SECURITY WARNING: don't run with debug turned on in production!
+#utf-8
+DEBUG = True
+TEMPLATE_DEBUG = True
 
-For more information on this file, see
-https://docs.djangoproject.com/en/1.7/topics/settings/
-
-For the full list of settings and their values, see
-https://docs.djangoproject.com/en/1.7/ref/settings/
-"""
-
-# Build paths inside the project like this: os.path.join(BASE_DIR, ...)
-import os
-BASE_DIR = os.path.dirname(os.path.dirname(__file__))
-PROJECT_ROOT = os.path.abspath(os.path.dirname(__file__))
-
-
-# Quick-start development settings - unsuitable for production
-# See https://docs.djangoproject.com/en/1.7/howto/deployment/checklist/
+DATABASES = {
+    'default': {
+        'ENGINE':'django.db.backends.postgresql_psycopg2',
+        'NAME': 'willisite',
+        'USER': 'postgres',
+        'PASSWORD': '1234',
+        'HOST': 'localhost',
+        'PORT': '5432',
+    }
+}
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = '2!_vn197v&w2v-4^hwz448r)oxf^iozfzgija1fp60@)p74%d%'
-
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
-
-TEMPLATE_DEBUG = True
-
-ALLOWED_HOSTS = []
-
-REST_FRAMEWORK = {
-    'DEFAULT_FILTER_BACKENDS': ('rest_framework.filters.DjangoFilterBackend',)
-}
-
 
 # Application definition
 
@@ -54,6 +40,8 @@ INSTALLED_APPS = (
     'apps.comments',
 )
 
+INTERNAL_IPS = ("127.0.0.1",)
+
 MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -66,40 +54,6 @@ MIDDLEWARE_CLASSES = (
 
 ROOT_URLCONF = 'willisiteback.urls'
 
-WSGI_APPLICATION = 'willisiteback.wsgi.application'
-
-
-# Database
-# https://docs.djangoproject.com/en/1.7/ref/settings/#databases
-
-DATABASES = {
-    'default': {
-        'ENGINE':'django.db.backends.postgresql_psycopg2',
-        'NAME': 'willisite',
-        'USER': 'postgres',
-        'PASSWORD': '1234',
-        'HOST': 'localhost',
-        'PORT': '5432',
-    }
-}
-
-# Internationalization
-# https://docs.djangoproject.com/en/1.7/topics/i18n/
-
-LANGUAGE_CODE = 'en-us'
-
-TIME_ZONE = 'UTC'
-
-USE_I18N = True
-
-USE_L10N = True
-
-USE_TZ = True
-
-
-# Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/1.7/howto/static-files/
-
 STATIC_URL = '/static/'
 
 STATICFILES_FINDERS = (
@@ -107,8 +61,19 @@ STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.FileSystemFinder',
 )
 
+
 STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.CachedStaticFilesStorage'
 STATIC_ROOT = os.path.join(PROJECT_ROOT, 'content')
 #MEDIA_ROOT = os.sep.join(os.path.abspath(__file__).split(os.sep)[:2] + ['media'])
 MEDIA_ROOT = os.path.join(PROJECT_ROOT, 'media')
 MEDIA_URL = '/media/'
+
+EMAIL_USE_TLS = True
+
+EMAIL_HOST = 'smtp.gmail.com'
+
+EMAIL_HOST_USER = 'williamsnieves@gmail.com'
+
+EMAIL_HOST_PASSWORD = 'ERwilli12345678.'
+
+EMAIL_PORT = 587
