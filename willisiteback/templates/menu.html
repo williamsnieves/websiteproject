@@ -1,0 +1,66 @@
+{% load static from staticfiles %}
+{% block navigation %}
+   <header class="small-12">
+    <a href="" class="icon-menu-willi" id="main-menu-display"></a>
+		<figure class="header-logo">
+			<img src="{% static 'images/logo.png' %}" alt="logo willians" />
+		</figure>
+
+		<nav class="top-bar main-menu-tablet" data-topbar role="navigation">
+		  <ul class="title-area">
+		    <li class="name">
+		      <h1><a href="#"><img class="logo-tablet" src="{% static 'images/logo-tablet.png' %}" width="40" height="40" alt=""></a></h1>
+		    </li>
+
+		  </ul>
+
+		  <section class="top-bar-section">
+		    <!-- Left Nav Section -->
+		    <ul class="left" id="list-tablet-opc">
+				<li><a href="/">{{item1}}</a></li>
+                <li><a href="/portfolio">{{item4 | capfirst}}</a></li>
+                <li><a href="/labs">{{item5 | capfirst}}</a></li>
+                <li><a href="/tutorials">{{item6 | capfirst}}</a></li>
+                <li><a href="#" data-reveal-id="myModal">{{item7 | capfirst}}</a></li>
+                <li><a href="/blog">{{item8 | capfirst }}</a></li>
+			</ul>
+		  </section>
+		</nav>
+
+		<section class="row">
+			<nav class="top-bar main-menu-web" data-topbar role="navigation">
+			  <ul class="title-area">
+			    <li class="name">
+			      <h1><a href="/"><img class="logo-tablet" src="{% static 'images/logo-tablet.png' %}" width="40" height="40" alt="">illians Nieves</a></h1>
+			    </li>
+
+			  </ul>
+
+			  <section class="top-bar-section">
+			    <!-- Left Nav Section -->
+			    <ul class="left" id="list-tablet-opc">
+					<li><a href="/">{{item1}}</a></li>
+					<li><a href="/site-experiment">{{item2 | capfirst}}</a></li>
+					<li><a href="/portfolio">{{item4 | capfirst}}</a></li>
+					<li><a href="/labs">{{item5 | capfirst}}</a></li>
+					<li><a href="/tutorials">{{item6 | capfirst}}</a></li>
+					<li><a href="#" data-reveal-id="myModal">{{item7 | capfirst}}</a></li>
+					<li><a href="/blog">{{item8 | capfirst }}</a></li>
+				</ul>
+			  </section>
+			</nav>
+		</section>
+     </header>
+     <nav class="main-menu">
+		<div class="space-menu"></div>
+		<ul>
+			<li><a href="/">{{item1}}</a></li>
+            <li><a href="/profile">{{item3 | capfirst}}</a></li>
+            <li><a href="/portfolio">{{item4 | capfirst}}</a></li>
+            <li><a href="/labs">{{item5 | capfirst}}</a></li>
+            <li><a href="/tutorials">{{item6 | capfirst}}</a></li>
+            <li><a href="#" data-reveal-id="myModal">{{item7 | capfirst}}</a></li>
+            <li><a href="/blog">{{item8 | capfirst }}</a></li>
+		</ul>
+	</nav>
+{% endblock navigation %}

@@ -1,0 +1,35 @@
+{% load static from staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<title>Willians Nieves website - Desarrollo web, videogames y movil de profesionales para profesionales</title>
+	<link rel="stylesheet" href="{% static 'foundation/css/foundation.css' %}">
+	<link rel="stylesheet" href="{% static 'css/webstyle.css' %}">
+</head>
+<body>
+
+    {% block navigation %}
+        {% include 'menu.html' with item1="home" item2="sitio 3D" item3="perfil" item4="portafolios" item5="laboratorio" item6="tutoriales" item7="contacto" item8="blog"%}
+    {% endblock navigation %}
+
+    {% block content %}
+
+    {% endblock content %}
+
+
+    {% include 'contact/contactmodal.html' %}
+
+	
+	<!--<script src="//localhost:35729/livereload.js"></script>-->
+	<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+	<script src="{% static 'foundation/js/foundation.min.js' %}"></script>
+	<script src="{% static 'foundation/js/foundation/foundation.equalizer.js' %}"></script>
+    {% block libs%}
+
+    {% endblock libs%}
+	<script src="{% static 'lib/snap.svg-min.js' %}"></script>
+	<script src="{% static 'js/app.js' %}"></script>
+</body>
+</html>

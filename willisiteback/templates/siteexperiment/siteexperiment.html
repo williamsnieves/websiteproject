@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% load static from staticfiles %}
+{% block content %}
+    <h2>something amazing will coming here very soon</h2>
+{% endblock content %}
+
+{% block libs%}
+        <script src="{% static 'lib/imagesloaded.pkgd.min.js' %}"></script>
+	    <script src="{% static 'lib/masonry.pkgd.min.js' %}"></script>
+        <script src="{% static 'js/gridMasonry.js' %}"></script>
+{% endblock libs%}

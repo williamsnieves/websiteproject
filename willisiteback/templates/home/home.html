@@ -1,0 +1,402 @@
+{% extends 'base.html' %}
+{% load static from staticfiles %}
+{% block content %}
+    <section class="row small-page">
+
+		<section class="small-12 profile-image">
+			<figure>
+				<img src="{% static 'images/inicio.png' %}" width="640" height="550" alt="" />
+			</figure>
+		</section>
+		<section class="small-12">
+			<div class="content-profile-description">
+				<h2>Ing. Willians Nieves</h2>
+				<p>
+					Desarrollador de Aplicaciones
+				</p>
+				<p>
+					Apps Moviles / Games / Web
+				</p>
+			</div>
+		</section>
+		<section class="small-12">
+			<div class="bio-description">
+				<div class="info-title-profile">
+					<h2>Willians Nieves</h2>
+					<h4>Desarrollador de aplicaciones</h4>
+					<h4>Aplicaciones web</h4>
+					<h4>Aplicaciones moviles</h4>
+					<h4>Videogames</h4>
+				</div>
+
+				<div class="info-profile">
+					<p>You think water moves fast? You should see ice. It moves like it has a mind. Like it knows it killed the world once and got a taste for murder. After the avalanche, it took us a week to climb out. Now, I don't know exactly when we turned on each other, but I know that seven of us survived the slide... and only five made it out. Now we took an oath, that I'm breaking now. We said we'd say it was the snow that killed the other two, but it wasn't. Nature is lethal but it doesn't hold a candle to man. </p>
+
+				</div>
+				<figure class="bg-bio">
+					<img src="{% static 'images/bio.png' %}" alt="" />
+				</figure>
+			</div>
+		</section>
+
+		<section class="small-12">
+			<div class="skill-content">
+				<div class="title-skill">
+					<h2>Skills</h2>
+				</div>
+				<div class="list-skill">
+					<ul>
+						<li>Git</li>
+						<li>Scrum</li>
+						<li>PostgreSQL</li>
+						<li>OOP</li>
+						<li>SCRUM</li>
+						<li>Javascript</li>
+						<li>Django</li>
+						<li>Python</li>
+						<li>Node Js</li>
+
+					</ul>
+				</div>
+
+			</div>
+		</section>
+
+		<section class="small-12">
+			<section class="potfolio-categories">
+				<div class="item-categories">
+					<div class="image-cat" style="background-image: url(http://lorempixel.com/640/480/technics/)"></div>
+					<div class="mesh-image" style="background-color: #2fa5e2;"></div>
+					<h3>MOVIL</h3>
+				</div>
+				<div class="item-categories">
+					<div class="image-cat" style="background-image: url(http://lorempixel.com/640/480/business/)"></div>
+					<div class="mesh-image" style="background-color: #c2ee5b;"></div>
+					<h3>WEB</h3>
+				</div>
+				<div class="item-categories">
+					<div class="image-cat" style="background-image: url(http://lorempixel.com/640/480/abstract/)"></div>
+					<div class="mesh-image" style="background-color: #2effe0;"></div>
+					<h3>GAMES</h3>
+				</div>
+			</section>
+		</section>
+		<section class="small-12">
+			<div class="contact-form-wrapper">
+				<h2>Contacto</h2>
+				<form action="" id="contact-form">
+				    <div class="small-12 columns less-padding">
+				      <label>Nombre
+				        <input class="contact" id="line-input-name" type="text" />
+				      </label>
+				    </div>
+
+
+				    <div class="small-12 columns less-padding">
+				      <label>Email
+				        <input class="contact" id="line-input-email" type="email" />
+				      </label>
+				    </div>
+
+
+				    <div class="small-12 columns less-padding">
+				      <label>Mensaje
+				      	<textarea class="contact" id="line-input-message" rows="10" cols="50">
+				      	</textarea>
+				      </label>
+				    </div>
+
+
+
+				    <div class="small-12 columns less-padding">
+				      <a role="button" aria-label="submit form" href="#" class="button center-buttton-form">Enviar</a>
+				    </div>
+
+				</form>
+			</div>
+		</section>
+	</section>
+
+	<section class="row tablet-page">
+		<section class="medium-12 columns profile-desc-tablet" data-equalizer style="border: 1px solid red">
+			<div class="medium-6 columns" data-equalizer-watch>
+				<div class="content-profile-description-tablet" >
+					<h2>Willians Nieves</h2>
+					<h4>Desarrollador de aplicaciones</h4>
+					<h4>Aplicaciones web</h4>
+					<h4>Aplicaciones moviles</h4>
+					<h4>Videogames</h4>
+				</div>
+
+				<div class="content-profile-description-tablet">
+					<p>You think water moves fast? You should see ice. It moves like it has a mind. Like it knows it killed the world once and got a taste for murder. After the avalanche, it took us a week to climb out. Now, I don't know exactly when we turned on each other, but I know that seven of us survived the slide... and only five made it out. Now we took an oath, that I'm breaking now. We said we'd say it was the snow that killed the other two, but it wasn't. Nature is lethal but it doesn't hold a candle to man. </p>
+
+				</div>
+			</div>
+
+			<figure class="medium-6 columns image-desc-tablet" data-equalizer-watch>
+				<img src="{% static 'images/profile-med.png' %}" alt="willians image" width="640" height="509" />
+			</figure>
+		</section>
+		<section class="medium-12 columns title-skill-tablet">
+			<h2>SKILLS</h2>
+		</section>
+		<section class="medium-6 columns left-brain-side">
+
+				<figure>
+					<img src="{% static 'images/left-brain.png' %}" alt="" />
+				</figure>
+
+				<div class="skill-image">
+
+				</div>
+				<div class="skill-image">
+
+				</div>
+				<div class="skill-image">
+
+				</div>
+				<div class="skill-image">
+
+				</div>
+				<div class="skill-image">
+
+				</div>
+
+
+				<div class="baseline-brain"></div>
+				<h6 class="title-skill">html 5</h6>
+				<div class="topline-brain"></div>
+
+
+				<div class="baseline-brain"></div>
+				<h6 class="title-skill">html 5</h6>
+				<div class="topline-brain"></div>
+
+
+				<div class="baseline-brain-first"></div>
+				<h6 class="title-skill">html 5</h6>
+				<div class="topline-brain-first"></div>
+
+
+
+				<div class="baseline-brain-second"></div>
+				<h6 class="title-skill">html 5</h6>
+				<div class="topline-brain-second"></div>
+
+
+
+				<div class="baseline-brain-third"></div>
+				<h6 class="title-skill">html 5</h6>
+				<div class="topline-brain-third"></div>
+
+
+
+				<div class="baseline-brain-fourth"></div>
+				<div class="topline-brain-fourth"></div>
+
+
+
+
+		</section>
+		<section class="medium-6 columns right-brain-side">
+				<figure>
+					<img src="{% static 'images/right-brain.png' %}" alt="" />
+				</figure>
+
+				<div class="skill-image-right">
+
+				</div>
+				<div class="skill-image-right">
+
+				</div>
+				<div class="skill-image-right">
+
+				</div>
+				<div class="skill-image-right">
+
+				</div>
+
+
+				<div class="baseline-brain-right"></div>
+				<h6 class="title-skill-right">html 5</h6>
+				<div class="topline-brain-right"></div>
+
+
+				<div class="baseline-brain-right"></div>
+				<div class="topline-brain-right"></div>
+
+
+				<div class="baseline-brain-first-right"></div>
+				<div class="topline-brain-first-right"></div>
+
+
+
+				<div class="baseline-brain-second-right"></div>
+				<div class="topline-brain-second-right"></div>
+
+
+
+				<div class="baseline-brain-third-right"></div>
+				<div class="topline-brain-third-right"></div>
+
+
+		</section>
+	</section>
+
+
+	<section class="row web-page">
+		<section class="large-12 colums">
+			<div class="bg-web-logo">
+				<figure>
+					<img src="{% static 'images/logo-big.png' %}" alt="" />
+				</figure>
+				<h2>Ing. Willians Nieves</h2>
+				<h6>Desarrollador de aplicaciones</h6>
+				<h6>Aplicaciones web</h6>
+				<h6>Aplicaciones moviles</h6>
+				<h6>Videogames</h6>
+			</div>
+		</section>
+		<section class="large-12 medium-12 columns web-content-profile-wrapper">
+			<div class="large-6 medium-6 columns profile-content-web-init">
+				<h2>willians nieves</h2>
+				<h6>Aplicaciones web</h6>
+				<h6>Aplicaciones moviles</h6>
+				<h6>Videogames</h6>
+
+				<p>You think water moves fast? You should see ice. It moves like it has a mind. Like it knows it killed the world once and got a taste for murder. After the avalanche, it took us a week to climb out. Now, I don't know exactly when we turned on each other, but I know that seven of us survived the slide... and only five made it out. Now we took an oath, that I'm breaking now.</p>
+				<a href="#" class="expand-more-profile">+</a>
+			</div>
+			<div class="profile-skilllogo-web-init">
+
+			</div>
+			<div class="large-6 medium-6 columns profile-image-web-init">
+				<figure>
+					<img src="{% static 'images/profile-med.png' %}" alt="" />
+				</figure>
+			</div>
+			<div class="mini-brain-web">
+				<figure>
+					<img src="{% static 'images/mini-brain.png' %}" alt="" />
+				</figure>
+			</div>
+			<h2 class="mini-title-web">SKILLS</h2>
+		</section>
+		<section style=" position: relative">
+
+		<section class="large-12 medium-12 columns web-more-profile">
+			<span class="close-more-profile">X</span>
+			<p>You think water moves fast? You should see ice. It moves like it has a mind. Like it knows it killed the world once and got a taste for murder. After the avalanche, it took us a week to climb out. Now, I don't know exactly when we turned on each other, but I know that seven of us survived the slide... and only five made it out. Now we took an oath, that I'm breaking now.
+			You think water moves fast? You should see ice. It moves like it has a mind. Like it knows it killed the world once and got a taste for murder. After the avalanche, it took us a week to climb out. Now, I don't know exactly when we turned on each other, but I know that seven of us survived the slide... and only five made it out. Now we took an oath, that I'm breaking now.
+			</p>
+		</section>
+		</section>
+		<section class="large-12 medium-12 columns big-title-web">
+			<h2>skills</h2>
+		</section>
+
+	</section>
+	<section class="row-fluid brain-offset-content-web">
+		<section class="large-6 medium-6 columns wrapper-offset-left-web-brain"></section>
+		<section class="row">
+			<section class="large-12 medium-12 columns brain-wrapper-web">
+				<section class="large-6 medium-6 columns brain-left-content-web">
+					<figure>
+						<img src="{% static 'images/left-brainweb.png' %}" alt="" />
+					</figure>
+					<div class="skill-image">
+
+					</div>
+					<div class="skill-image">
+
+					</div>
+					<div class="skill-image">
+
+					</div>
+					<div class="skill-image">
+
+					</div>
+					<div class="skill-image">
+
+					</div>
+
+
+					<div class="baseline-brain"></div>
+					<h6 class="title-skill">html 5</h6>
+					<div class="topline-brain"></div>
+
+
+					<div class="baseline-brain"></div>
+					<h6 class="title-skill">html 5</h6>
+					<div class="topline-brain"></div>
+
+
+					<div class="baseline-brain-first"></div>
+					<h6 class="title-skill">html 5</h6>
+					<div class="topline-brain-first"></div>
+
+
+
+					<div class="baseline-brain-second"></div>
+					<h6 class="title-skill">html 5</h6>
+					<div class="topline-brain-second"></div>
+
+
+
+					<div class="baseline-brain-third"></div>
+					<h6 class="title-skill">html 5</h6>
+					<div class="topline-brain-third"></div>
+
+
+
+					<div class="baseline-brain-fourth"></div>
+					<div class="topline-brain-fourth"></div>
+				</section>
+				<section class="large-6 medium-6 columns brain-right-content-web">
+					<figure>
+						<img src="{% static 'images/right-brainweb.png' %}" alt="">
+					</figure>
+					<div class="skill-image-right">
+
+					</div>
+					<div class="skill-image-right">
+
+					</div>
+					<div class="skill-image-right">
+
+					</div>
+					<div class="skill-image-right">
+
+					</div>
+
+
+					<div class="baseline-brain-right"></div>
+					<h6 class="title-skill-right">html 5</h6>
+					<div class="topline-brain-right"></div>
+
+
+					<div class="baseline-brain-right"></div>
+					<div class="topline-brain-right"></div>
+
+
+					<div class="baseline-brain-first-right"></div>
+					<div class="topline-brain-first-right"></div>
+
+
+
+					<div class="baseline-brain-second-right"></div>
+					<div class="topline-brain-second-right"></div>
+
+
+
+					<div class="baseline-brain-third-right"></div>
+					<div class="topline-brain-third-right"></div>
+				</section>
+			</section>
+		</section>
+		<section class="large-6 medium-6 columns wrapper-offset-right-web-brain"></section>
+	</section>
+
+
+{% endblock content %}
