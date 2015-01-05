@@ -251,8 +251,12 @@
 				<figure>
 					<img src="{% static 'images/logo-big.png' %}" alt="" />
 				</figure>
-				<h2>{{profile}}</h2>
-				<h6>Desarrollador de aplicaciones</h6>
+                {% for prof in profile %}
+				<h2>{{prof.name | title}} {{prof.lastname | title}}</h2>
+                {% endfor %}
+                {% for misc in shortdescription %}
+				    <h6>{{misc}}</h6>
+                {% endfor %}
 				<h6>Aplicaciones web</h6>
 				<h6>Aplicaciones moviles</h6>
 				<h6>Videogames</h6>
