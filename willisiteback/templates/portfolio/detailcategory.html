@@ -3,89 +3,25 @@
 {% block content %}
     <section class="row web-page">
 		<div id="container-wall" class="free-wall">
+            {% for categories in category_list %}
 			<div class="box">
 				<figure class="effect-bubba">
 					<img src="{% static 'images/1.png' %}" alt="">
-					<figcaption>
-						<h2>App <span>Movil</span></h2>
-						<a href="detail">View more</a>
+
+                    <figcaption>
+						<h2><span>{{categories.title}}</span></h2>
+						<a href="{{categories.slug}}">View more</a>
 					</figcaption>
+
 				</figure>
 
 			</div>
-			<div class="box w2">
-				<figure class="effect-bubba">
-					<img src="{% static 'images/imageweb3.png' %}" alt="">
-					<figcaption>
-						<h2>App <span>Web</span></h2>
-						<a href="#">View more</a>
-					</figcaption>
-				</figure>
+            {% empty %}
+            <div>
+                Aun no he creado apps en esta categoria pero estan cerca
+            </div>
+            {% endfor %}
 
-			</div>
-			<div class="box">
-				<figure class="effect-bubba">
-					<img src="{% static 'images/3.png' %}" alt="">
-					<figcaption>
-						<h2>App <span>Web</span></h2>
-						<a href="#">View more</a>
-					</figcaption>
-				</figure>
-			</div>
-			<div class="box">
-				<figure class="effect-bubba">
-					<img src="{% static 'images/webimage1.jpg' %}" alt="">
-					<figcaption>
-						<h2>App <span>Web</span></h2>
-						<a href="#">View more</a>
-					</figcaption>
-				</figure>
-			</div>
-			<div class="box">
-				<figure class="effect-bubba">
-					<img src="{% static 'images/webimage2.jpg' %}" alt="">
-					<figcaption>
-						<h2>App <span>Web</span></h2>
-						<a href="#">View more</a>
-					</figcaption>
-				</figure>
-			</div>
-			<div class="box">
-				<figure class="effect-bubba">
-					<img src="{% static 'images/1.png' %}" alt="">
-					<figcaption>
-						<h2>App <span>Web</span></h2>
-						<a href="#">View more</a>
-					</figcaption>
-				</figure>
-			</div>
-			<div class="box">
-				<figure class="effect-bubba">
-					<img src="{% static 'images/3.png' %}" alt="">
-					<figcaption>
-						<h2>App <span>Web</span></h2>
-						<a href="#">View more</a>
-					</figcaption>
-				</figure>
-			</div>
-			<div class="box">
-				<figure class="effect-bubba">
-					<img src="{% static 'images/4.png' %}" alt="">
-					<figcaption>
-						<h2>App <span>Web</span></h2>
-						<a href="#">View more</a>
-					</figcaption>
-				</figure>
-			</div>
-			<div class="box">
-				<figure class="effect-bubba">
-					<img src="{% static 'images/2.png' %}" alt="">
-					<figcaption>
-						<h2>App <span>Web</span></h2>
-						<a href="#">View more</a>
-					</figcaption>
-				</figure>
-			</div>
 		</div>
 	</section>
 {% endblock content %}

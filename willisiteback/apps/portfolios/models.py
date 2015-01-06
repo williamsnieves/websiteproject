@@ -8,6 +8,7 @@ class Portfolio(models.Model):
     title=models.CharField(max_length=255)
     description=models.CharField(max_length=255)
     path=models.CharField(max_length=255)
+    slug=models.CharField(max_length=255)
     id_categories=models.ForeignKey(Category)
 
     def __str__(self):
