@@ -3,72 +3,78 @@
 {% block content %}
     <section class="row web-page">
 		<div id="container-wall" class="free-wall">
-			<div class="box tut-image-content">
-				<figure>
-					<img src="{% static 'images/1.png' %}" alt="">
-					<figcaption>
-						<h3>Title</h3>
-						<p>Now that we know who you are, I know who I am. I'm not a mistake! It all makes sense! In a comic, you know how you can tell who the arch-villain's</p>
-					</figcaption>
-				</figure>
+            {% for tuts in tutorial_list %}
+                {% if tuts.is_image %}
+                    <div class="box tut-image-content">
+                        <figure>
+                            <img src="{% static 'images/1.png' %}" alt="">
+                            <figcaption>
+                                <h3>{{tuts.title}}</h3>
+                                <p>{{tuts.description}}</p>
+                            </figcaption>
+                        </figure>
 
-			</div>
-			<div class="box w2 text-content-lab-medium">
-				<h3>Title</h3>
+                    </div>
+                {% endif %}
+
+                {% if tuts.is_medium %}
+                    <div class="box w2 text-content-lab-medium">
+                        <h3>{{tuts.title}}</h3>
+                        <p>
+                            {{tuts.description}}
+                        </p>
+
+                    </div>
+                {% endif %}
+
+                {% if tuts.is_light %}
+                    <div class="box w2 text-content-lab-light">
+                        <h3>{{tuts.title}}</h3>
+                        <p>
+                            {{tuts.description}}
+                        </p>
+
+                    </div>
+                {% endif %}
+
+                {% if tuts.is_normal %}
+                    <div class="box w2 text-content-lab">
+                        <h3>{{tuts.title}}</h3>
+                        <p>
+                            {{tuts.description}}
+                        </p>
+
+                    </div>
+                {% endif %}
+
+            {% empty %}
+
+            <div data-alert class="alert-box info">
+                No hay tutoriales disponibles
+                <a href="#" class="close">&times;</a>
+            </div>
+
+			<!--<div class="box w2 text-content-lab-light">
+				<h3>{{tuts.name}}</h3>
 				<p>
-					Your bones don't break, mine do. That's clear. Your cells react to bacteria and viruses differently than mine. You don't get sick, I do. That's also
-				</p>
-
-			</div>
-
-			<div class="box w2 text-content-lab-light">
-				<h3>Title</h3>
-				<p>
-					Your bones don
+					{{tuts.description}}
 				</p>
 
 			</div>
 			<div class="box text-content-lab">
-				<h3>Title</h3>
+				<h3>{{tuts.name}}</h3>
 				<p>
-					Your bones don't break, mine do. That's clear. Your cells react to bacteria and viruses differently than mine. You don't get sick, I do. That's also clear. But for some reason, you and I react the exact same way to water. We swallow it too fast, we choke. We get some in our lungs, we drown. However unreal it may seem, we are connected, you and I. We're on the same curve, just on opposite ends.
-					Your bones don't break, mine do. That's clear. Your cells react to bacteria and viruses differently than mine. You don't get sick, I do. That's also clear. But for some reason, you and I react the exact same way to water. We swallow it too fast, we choke. We get some in our lungs, we drown. However unreal it may seem, we are connected, you and I. We're on the same curve, just on opposite ends.
-					Your bones don't break, mine do. That's clear. Your cells react to bacteria and viruses differently than mine. You don't get sick, I do. That's also clear. But for some reason, you and I react the exact same way to water. We swallow it too fast, we choke. We get some in our lungs, we drown. However unreal it may seem, we are connected, you and I. We're on the same curve, just on opposite ends.
+					 {{tuts.description}}
 				</p>
-			</div>
-			<div class="box tut-image-content">
-				<figure>
-					<img src="{% static 'images/1.png' %}" alt="">
-					<figcaption>
-						<h3>Title</h3>
-						<p>Now that we know who you are, I know who I am. I'm not a mistake! It all makes sense! In a comic, you know how you can tell who the arch-villain's</p>
-					</figcaption>
-				</figure>
-
-			</div>
-			<div class="box text-content-lab">
-				<h3>Title</h3>
-				<p>
-					Your bones don't bre
-					Your bones don't break, mine do. That's clear. Your cells react to bacteria and viruses differently than mine. You don't get sick, I do. That's also clear. But for some reason, you and I react the exact same way to water. We swallow it too fast, we choke. We get some in our lungs, we drown. However unreal it may seem, we are connected, you and I. We're on the same curve, just on opposite ends.ak, mine do. That's clear. Your cells react to bacteria and viruses differently than mine. You don't
-				</p>
-			</div>
-
-
-
-			<div class="box text-content-lab">
-				<h3>Title</h3>
-				<p>
-					Your bones don't bre
-					Your bones don't break, mine do. That's clear. Your cells react to bacteria and viruses differently than mine. You don't get sick, I do. That's also clear. But for some reason, you and I react the exact same way to water. We swallow it too fast, we choke. We get some in our lungs, we drown. However unreal it may seem, we are connected, you and I. We're on the same curve, just on opposite ends.ak, mine do. That's clear. Your cells react to bacteria and viruses differently than mine. You don't
-				</p>
-			</div>
+			</div>-->
+			{% endfor %}
 
 		</div>
 	</section>
 {% endblock content %}
 
 {% block libs%}
+
         <script src="{% static 'lib/imagesloaded.pkgd.min.js' %}"></script>
 	    <script src="{% static 'lib/masonry.pkgd.min.js' %}"></script>
         <script src="{% static 'js/gridMasonry.js' %}"></script>

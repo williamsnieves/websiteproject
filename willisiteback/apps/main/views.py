@@ -7,6 +7,7 @@ from apps.biography.models import Biography
 from apps.portfolios.models import Portfolio
 from apps.categories.models import Category
 from apps.labs.models import Lab
+from apps.tutorials.models import Tutorial
 
 
 class HomeViewMixin(object):
@@ -64,7 +65,9 @@ class LabsView(ListView):
         context['isImage'] = True
         return context
 
-class TutorialView(TemplateView):
+class TutorialView(ListView):
+    model = Tutorial
+    context_object_name = "tutorial_list"
     template_name = 'tutorials/tutorials.html'
 
     def get_context_data(self, **kwargs):
