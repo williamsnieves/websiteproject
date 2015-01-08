@@ -5,6 +5,7 @@ from apps.tags.models import Tag
 class Tutorial(models.Model):
     id=models.AutoField(primary_key=True)
     title=models.CharField(max_length=255)
+    slug=models.CharField(max_length=255)
     is_image = models.BooleanField()
     is_medium = models.BooleanField()
     is_light = models.BooleanField()

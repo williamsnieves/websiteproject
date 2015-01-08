@@ -1,5 +1,5 @@
 from django.conf.urls import patterns, url
-from .views import HomeView, PortfolioView, LabsView, TutorialView, SiteExperimentalView, DetailCategoryView, DetailPortfolioView
+from .views import HomeView, PortfolioView, LabsView, TutorialView, SiteExperimentalView, DetailCategoryView, DetailPortfolioView, DetailTutorialView, DetailLabsView
 from .helpers import PortfolioHelper
 
 urlpatterns = patterns('',
@@ -9,5 +9,7 @@ urlpatterns = patterns('',
     url(r'^portfolio/(?P<category_name>\w+)/(?P<slug>[\w\-]+)/$', DetailPortfolioView.as_view(), name='detail-portfolio'),
     url(r'^labs/$', LabsView.as_view(), name='labs'),
     url(r'^tutorials/$', TutorialView.as_view(), name='tutorials'),
+    url(r'^tutorials/(?P<slug>[\w\-]+)/$', DetailTutorialView.as_view(), name='tutorials'),
+    url(r'^labs/(?P<slug>[\w\-]+)/$', DetailLabsView.as_view(), name='labs'),
     url(r'^site-experiment/$', SiteExperimentalView.as_view(), name='site-experiment'),
 )

@@ -9,7 +9,9 @@
                         <figure>
                             <img src="{% static 'images/1.png' %}" alt="">
                             <figcaption>
-                                <h3>{{tuts.title}}</h3>
+                                <a href="{{tuts.slug}}">
+                                    <h3>{{tuts.title}}</h3>
+                                </a>
                                 <p>{{tuts.description}}</p>
                             </figcaption>
                         </figure>
@@ -19,7 +21,9 @@
 
                 {% if tuts.is_medium %}
                     <div class="box w2 text-content-lab-medium">
-                        <h3>{{tuts.title}}</h3>
+                        <a href="{{tuts.slug}}">
+                            <h3>{{tuts.title}}</h3>
+                        </a>
                         <p>
                             {{tuts.description}}
                         </p>
@@ -29,7 +33,9 @@
 
                 {% if tuts.is_light %}
                     <div class="box w2 text-content-lab-light">
-                        <h3>{{tuts.title}}</h3>
+                        <a href="{{tuts.slug}}">
+                            <h3>{{tuts.title}}</h3>
+                        </a>
                         <p>
                             {{tuts.description}}
                         </p>
@@ -39,7 +45,9 @@
 
                 {% if tuts.is_normal %}
                     <div class="box w2 text-content-lab">
-                        <h3>{{tuts.title}}</h3>
+                         <a href="{{tuts.slug}}">
+                            <h3>{{tuts.title}}</h3>
+                        </a>
                         <p>
                             {{tuts.description}}
                         </p>

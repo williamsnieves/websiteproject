@@ -65,10 +65,29 @@ class LabsView(ListView):
         context['isImage'] = True
         return context
 
+class DetailLabsView(DetailView):
+    model = Lab
+    context_object_name = "lab_list"
+    template_name = 'labs/labs.html'
+
+    def get_context_data(self, **kwargs):
+        context = super(LabsView, self).get_context_data(**kwargs)
+        context['isImage'] = True
+        return context
+
 class TutorialView(ListView):
     model = Tutorial
     context_object_name = "tutorial_list"
     template_name = 'tutorials/tutorials.html'
+
+    def get_context_data(self, **kwargs):
+        context = super(TutorialView, self).get_context_data(**kwargs)
+        return context
+
+class DetailTutorialView(DetailView):
+    model = Tutorial
+    context_object_name = "tutorial_list"
+    template_name = 'tutorials/detailtutorials.html'
 
     def get_context_data(self, **kwargs):
         context = super(TutorialView, self).get_context_data(**kwargs)

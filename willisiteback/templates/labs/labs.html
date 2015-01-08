@@ -4,13 +4,14 @@
     <section class="row web-page">
 		<div id="container-wall" class="free-wall">
             {% for lab in lab_list %}
-                 {% if isImage %}
+                 {% if lab.is_image %}
                     <div class="box lab-image-content">
                         <figure>
                             <img src="{% static 'images/1.png' %}" alt="">
                             <figcaption>
-                                <h3>{{lab.title}}</h3>
-
+                                 <a href="{{lab.slug}}">
+                                    <h3>{{lab.title}}</h3>
+                                 </a>
                                 <p>{{lab.description}}</p>
                             </figcaption>
                         </figure>
@@ -18,16 +19,46 @@
                     </div>
                 {% endif %}
 
-                <div class="box w2 text-content-lab">
-                    <h3>{{lab.title}}</h3>
+                {% if lab.is_medium %}
+
+                <div class="box w2 text-content-lab-medium">
+                   <a href="{{lab.slug}}">
+                        <h3>{{lab.title}}</h3>
+                   </a>
                     <p>
                         {{lab.description}}
                     </p>
 
                 </div>
+               {% endif %}
+
+               {% if lab.is_normal %}
+                    <div class="box w2 text-content-lab">
+                       <a href="{{lab.slug}}">
+                            <h3>{{lab.title}}</h3>
+                        </a>
+                        <p>
+                            {{lab.description}}
+                        </p>
+
+                    </div>
+               {% endif %}
+
+            {% if lab.is_light %}
+
+                    <div class="box w2 text-content-lab-light">
+                        <a href="{{lab.slug}}">
+                           <h3>{{lab.title}}</h3>
+                        </a>
+                        <p>
+                            {{lab.description}}
+                        </p>
+
+                    </div>
+             {% endif %}
 
             {% empty %}
-               <div>no hay nada</div>
+               <div>No hay posts en el laboratorio</div>
 
 
             {% endfor %}
