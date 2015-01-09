@@ -24,6 +24,7 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'autofixture',
+    #'ckeditor',
     'django_extensions',
     'rest_framework',
     'apps.biography',
@@ -47,9 +48,12 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 )
 
+
 ROOT_URLCONF = 'willisiteback.urls'
 
 WSGI_APPLICATION = 'willisiteback.wsgi.application'
+
+#CKEDITOR_UPLOAD_PATH = "uploads/"
 
 
 # Database

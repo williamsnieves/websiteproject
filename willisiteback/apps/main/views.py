@@ -68,10 +68,10 @@ class LabsView(ListView):
 class DetailLabsView(DetailView):
     model = Lab
     context_object_name = "lab_list"
-    template_name = 'labs/labs.html'
+    template_name = 'labs/detaillabs.html'
 
     def get_context_data(self, **kwargs):
-        context = super(LabsView, self).get_context_data(**kwargs)
+        context = super(DetailLabsView, self).get_context_data(**kwargs)
         context['isImage'] = True
         return context
 
@@ -90,7 +90,7 @@ class DetailTutorialView(DetailView):
     template_name = 'tutorials/detailtutorials.html'
 
     def get_context_data(self, **kwargs):
-        context = super(TutorialView, self).get_context_data(**kwargs)
+        context = super(DetailTutorialView, self).get_context_data(**kwargs)
         return context
 
 class ContactView(TemplateView):
