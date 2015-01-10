@@ -1,6 +1,6 @@
 from .base import *
 
-SECRET_KEY = '2!_vn197v&w2v-4^hwz448r)oxf^iozfzgija1fp60@)p74%d%'
+SECRET_KEY = get_env_variable("SOME_SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -24,7 +24,7 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'autofixture',
-    #'ckeditor',
+    'ckeditor',
     'django_extensions',
     'rest_framework',
     'apps.biography',
@@ -48,6 +48,10 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 )
 
+
+CKEDITOR_UPLOAD_PATH = "uploads/"
+
+CKEDITOR_JQUERY_URL = '//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js'
 
 ROOT_URLCONF = 'willisiteback.urls'
 
@@ -101,7 +105,7 @@ TEMPLATE_LOADERS = (
 # https://docs.djangoproject.com/en/1.7/howto/static-files/
 
 STATIC_URL = '/static/'
-STATIC_ROOT = ''
+STATIC_ROOT = '/static/dist/'
 
 
 # Additional locations of static files

@@ -86,12 +86,16 @@ class TutorialView(ListView):
 
 class DetailTutorialView(DetailView):
     model = Tutorial
-    context_object_name = "tutorial_list"
+    context_object_name = "tutorial_detail"
     template_name = 'tutorials/detailtutorials.html'
 
-    def get_context_data(self, **kwargs):
-        context = super(DetailTutorialView, self).get_context_data(**kwargs)
-        return context
+    def query_set(self):
+        if self.kwargs.get('slug'):
+            queryset = self.model.objects.filter(slug=self.kwargs['slug'])
+        else:
+            queryset = super(DetailTutorialView, self).get_queryset()
+
+        return queryset
 
 class ContactView(TemplateView):
     template_name = 'contact/contact.html'

@@ -27,4 +27,5 @@ urlpatterns = patterns('',
     url(r'^admin/', include(admin.site.urls)),
     url(r'^api/', include(router.urls)),
     url('', include('apps.main.urls')),
+    url(r'^ckeditor/', include('ckeditor.urls')),
 )
