@@ -10,8 +10,10 @@ class Tutorial(models.Model):
     is_medium = models.BooleanField()
     is_light = models.BooleanField()
     is_normal = models.BooleanField()
+    is_code = models.BooleanField()
     shortdesc=models.TextField()
     description=models.TextField()
+    code = models.TextField()
     id_tags=models.ForeignKey(Tag)
 
     def __str__(self):

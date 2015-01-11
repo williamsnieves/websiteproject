@@ -53,6 +53,14 @@ CKEDITOR_UPLOAD_PATH = "uploads/"
 
 CKEDITOR_JQUERY_URL = '//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js'
 
+CKEDITOR_CONFIGS = {
+    'default': {
+        'toolbar': 'full',
+        "extraPlugins": "codesnippet",
+        "codeSnippet_theme": 'monokai_sublime'
+    },
+}
+
 ROOT_URLCONF = 'willisiteback.urls'
 
 WSGI_APPLICATION = 'willisiteback.wsgi.application'
