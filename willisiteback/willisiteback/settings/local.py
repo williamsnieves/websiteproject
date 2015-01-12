@@ -25,6 +25,9 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'autofixture',
     'ckeditor',
+    'filer',
+    'easy_thumbnails',
+    'mptt',
     'django_extensions',
     'rest_framework',
     'apps.biography',
@@ -133,5 +136,14 @@ STATICFILES_FINDERS = (
 
 STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.CachedStaticFilesStorage'
 #MEDIA_ROOT = os.sep.join(os.path.abspath(__file__).split(os.sep)[:2] + ['media'])
-MEDIA_ROOT = os.path.join(PROJECT_ROOT, 'media')
+#MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_ROOT = 'media/'
 MEDIA_URL = '/media/'
+
+THUMBNAIL_PROCESSORS = (
+    'easy_thumbnails.processors.colorspace',
+    'easy_thumbnails.processors.autocrop',
+    #'easy_thumbnails.processors.scale_and_crop',
+    'filer.thumbnail_processors.scale_and_crop_with_subject_location',
+    'easy_thumbnails.processors.filters',
+)

@@ -1,5 +1,6 @@
 from django.db import models
 from apps.tags.models import Tag
+from filer.fields.image import FilerImageField
 # Create your models here.
 
 class Lab(models.Model):
@@ -7,14 +8,14 @@ class Lab(models.Model):
     title=models.CharField(max_length=255)
     slug=models.CharField(max_length=255)
     short_description= models.TextField()
+    photo = FilerImageField(null=True, blank=True)
     is_image = models.BooleanField()
+    is_thumb_image = models.BooleanField()
     is_medium = models.BooleanField()
     is_light = models.BooleanField()
     is_normal = models.BooleanField()
-    is_code = models.BooleanField()
     description=models.TextField()
     path_video=models.CharField(max_length=255)
-    code = models.TextField()
     id_tags=models.ForeignKey(Tag)
 
     def __str__(self):

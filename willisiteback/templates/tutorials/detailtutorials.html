@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load thumbnail %}
 {% load static from staticfiles %}
 {% block content %}
     <section class="row tablet-page">
@@ -17,9 +18,11 @@
 	<section class="row web-page">
 		<section class="medium-12 columns detail-images-tablet">
             <h2>{{tutorial_detail.title}}</h2>
+            {% if tutorial_detail.is_image %}
 			<figure>
-				<img src="{% static 'images/detailimg1tablet.jpg' %}"  alt="" style="width: 100%; height:400px;">
+				<img src="{% thumbnail tutorial_detail.photo 1000x400 %}"  alt="" style="width: 100%; height:400px;">
 			</figure>
+            {% endif %}
             <div>
                 {{tutorial_detail.description | safe}}
             </div>
@@ -29,7 +32,7 @@
 {% endblock content %}
 
 {% block libs %}
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/default.min.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/monokai_sublime.min.css">
     <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js"></script>
     <script>
         hljs.initHighlightingOnLoad();

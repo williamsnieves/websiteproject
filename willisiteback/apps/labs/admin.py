@@ -16,4 +16,4 @@ class LabAdminForm(forms.ModelForm):
 @admin.register(Lab)
 class LabAdmin(admin.ModelAdmin):
     form = LabAdminForm
-    list_display = ('title', 'description',)
+    list_display = ('title', 'short_description',)
