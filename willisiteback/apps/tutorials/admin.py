@@ -6,9 +6,7 @@ from ckeditor.widgets import CKEditorWidget
 # Register your models here.
 
 class TutorialAdminForm(forms.ModelForm):
-    shortdesc = forms.CharField(widget=CKEditorWidget())
     description = forms.CharField(widget=CKEditorWidget())
-    code = forms.CharField(widget=CKEditorWidget())
 
     class Meta:
         model = Tutorial

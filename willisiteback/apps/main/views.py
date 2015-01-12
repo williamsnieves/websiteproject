@@ -67,7 +67,7 @@ class LabsView(ListView):
 
 class DetailLabsView(DetailView):
     model = Lab
-    context_object_name = "lab_list"
+    context_object_name = "lab_detail"
     template_name = 'labs/detaillabs.html'
 
     def get_context_data(self, **kwargs):
