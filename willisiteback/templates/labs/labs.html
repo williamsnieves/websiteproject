@@ -1,13 +1,14 @@
 {% extends 'base.html' %}
+{% load thumbnail %}
 {% load static from staticfiles %}
 {% block content %}
     <section class="row web-page">
 		<div id="container-wall" class="free-wall">
             {% for lab in lab_list %}
-                 {% if lab.is_image %}
+                 {% if lab.is_thumb_image %}
                     <div class="box lab-image-content">
                         <figure>
-                            <img src="{% static 'images/1.png' %}" alt="">
+                            <img src="{% thumbnail lab.thumb lab.thumb_dims %}" alt="">
                             <figcaption>
                                  <a href="{{lab.slug}}">
                                     <h3>{{lab.title}}</h3>

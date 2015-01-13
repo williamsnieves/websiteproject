@@ -1,13 +1,14 @@
 {% extends 'base.html' %}
+{% load thumbnail %}
 {% load static from staticfiles %}
 {% block content %}
     <section class="row web-page">
 		<div id="container-wall" class="free-wall">
             {% for tuts in tutorial_list %}
-                {% if tuts.is_image %}
+                {% if tuts.is_thumb_image %}
                     <div class="box tut-image-content">
                         <figure>
-                            <img src="{% static 'images/1.png' %}" alt="">
+                            <img src="{% thumbnail tuts.thumb tuts.thumb_dims %}" alt="">
                             <figcaption>
                                 <a href="{{tuts.slug}}">
                                     <h3>{{tuts.title}}</h3>
@@ -82,7 +83,6 @@
 {% endblock content %}
 
 {% block libs%}
-
         <script src="{% static 'lib/imagesloaded.pkgd.min.js' %}"></script>
 	    <script src="{% static 'lib/masonry.pkgd.min.js' %}"></script>
         <script src="{% static 'js/gridMasonry.js' %}"></script>

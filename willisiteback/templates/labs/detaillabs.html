@@ -16,7 +16,9 @@
 	</section>
 
 	<section class="row web-page">
-		<section class="medium-12 columns detail-images-tablet">
+		<section class="medium-12 columns detail-images-tablet" style="border-bottom: 1px solid #eee; border-right: 1px solid #eee; border-left: 1px solid #eee; padding: 2em; box-shadow: 12px 0 15px -4px rgba(194, 194, 194, 0.8), -12px 0 8px -4px rgba(194, 194, 194, 0.8);">
+             <!-- Go to www.addthis.com/dashboard to customize your tools -->
+             <div class="addthis_sharing_toolbox"></div>
             <h2>{{lab_detail.title}}</h2>
 
             {% if lab_detail.is_image %}
@@ -29,10 +31,73 @@
             </div>
 
 		</section>
+
+        <section class="medium-12 columns comments-area-wrapper">
+            <div class="comments-area">
+                <h3>About the author</h3>
+                <figure>
+                    <img src="{% static 'images/erwilli.jpg' %}" alt=""/>
+                </figure>
+                <h4>
+                    Willians Nieves
+                </h4>
+                <p>
+                    soy erwilli lacrita que deja la peluquita
+                </p>
+            </div>
+        </section>
+
+        <section class="medium-12 columns comments-area-wrapper">
+            <div class="comments-area">
+                <h3>Comentarios <span>(50)</span></h3>
+                <figure>
+                    <img src="{% static 'images/erwilli.jpg' %}" alt=""/>
+                </figure>
+                <h4>
+                    Willians Nieves
+                    <spa>
+                        20/05/2015 - 14:00 pm
+                    </spa>
+                </h4>
+                <p>
+                    soy erwilli lacrita que deja la peluquita
+                </p>
+                <hr/>
+                <figure>
+                    <img src="{% static 'images/erwilli.jpg' %}" alt=""/>
+                </figure>
+                <h4>
+                    Willians Nieves
+                    <spa>
+                        20/05/2015 - 14:00 pm
+                    </spa>
+                </h4>
+                <p>
+                    soy erwilli lacrita que deja la peluquita
+                </p>
+                <hr/>
+                <figure>
+                    <img src="{% static 'images/erwilli.jpg' %}" alt=""/>
+                </figure>
+                <h4>
+                    Willians Nieves
+                    <spa>
+                        20/05/2015 - 14:00 pm
+                    </spa>
+                </h4>
+                <p>
+                    soy erwilli lacrita que deja la peluquita
+                </p>
+                <hr/>
+
+            </div>
+        </section>
 	</section>
 {% endblock content %}
 
 {% block libs %}
+        <!-- Go to www.addthis.com/dashboard to customize your tools -->
+    <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-54b537341c6f6073" async="async"></script>
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/monokai_sublime.min.css">
     <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js"></script>
     <script>
