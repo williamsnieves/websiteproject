@@ -9,6 +9,7 @@ class Biography(models.Model):
     career=models.CharField(max_length=255)
     category_list_short = models.CharField(max_length=255)
     short_description=models.TextField()
+    post_description=models.TextField(default="test")
     large_description=models.TextField()
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)

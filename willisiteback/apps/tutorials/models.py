@@ -1,5 +1,6 @@
 from django.db import models
 from apps.tags.models import Tag
+from apps.biography.models import Biography
 from filer.fields.image import FilerImageField
 # Create your models here.
 
@@ -19,6 +20,8 @@ class Tutorial(models.Model):
     shortdesc=models.TextField()
     description=models.TextField()
     id_tags=models.ForeignKey(Tag)
+    id_biographies=models.ForeignKey(Biography, default=1, related_name='author')
+
 
     def __str__(self):
         return self.title

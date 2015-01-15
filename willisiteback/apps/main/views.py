@@ -73,6 +73,7 @@ class DetailLabsView(DetailView):
     def get_context_data(self, **kwargs):
         context = super(DetailLabsView, self).get_context_data(**kwargs)
         context['isImage'] = True
+        context["info_author"] = Biography.objects.all();
         return context
 
 class TutorialView(ListView):
@@ -88,6 +89,12 @@ class DetailTutorialView(DetailView):
     model = Tutorial
     context_object_name = "tutorial_detail"
     template_name = 'tutorials/detailtutorials.html'
+
+
+    def get_context_data(self, **kwargs):
+        context = super(DetailTutorialView, self).get_context_data(**kwargs)
+        context["info_author"] = Biography.objects.all();
+        return context
 
     def query_set(self):
         if self.kwargs.get('slug'):

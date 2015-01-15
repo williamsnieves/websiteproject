@@ -37,16 +37,51 @@
                 <figure>
                     <img src="{% static 'images/erwilli.jpg' %}" alt=""/>
                 </figure>
+
                 <h4>
-                    Willians Nieves
+                    {{info_author.0.name | title}} {{info_author.0.lastname | title}}
                 </h4>
+
                 <p>
-                    soy erwilli lacrita que deja la peluquita
+                    {{info_author.0.post_description}}
                 </p>
             </div>
         </section>
 
+
         <section class="medium-12 columns comments-area-wrapper">
+
+            <div class="comments-area comments-login">
+                <h3>
+                    Quieres Comentar sobre el tutorial:
+                </h3>
+                <div class="large-12 columns">
+                    <div class="social-button twitter-button" data-name="twitter">
+                        <p>Twitter</p>
+                    </div>
+                    <div class="social-button facebook-button" data-name="facebook">
+                        <p>Facebook</p>
+                     </div>
+                </div>
+
+                <div id="form-comment-wrapper">
+                    <figure class="social-picture">
+                      <img src="" alt="" width="73"/>
+                    </figure>
+                    <h4 class="social-name">
+
+                    </h4>
+
+                    <form id="form-comment">
+                        <label>Mensaje
+				      	    <textarea class="contact" id="comment" name="comment" rows="10" cols="50">
+				      	</textarea>
+				      </label>
+                    </form>
+                </div>
+            </div>
+
+            {% if tutorial_detail.is_comment  %}
             <div class="comments-area">
                 <h3>Comentarios <span>(50)</span></h3>
                 <figure>
@@ -90,7 +125,9 @@
                 <hr/>
 
             </div>
+            {% endif %}
         </section>
+
 	</section>
 {% endblock content %}
 
@@ -104,4 +141,5 @@
         hljs.initHighlightingOnLoad();
 
     </script>
+    <script src="{% static 'lib/hello.min.js' %}"></script>
 {% endblock libs %}

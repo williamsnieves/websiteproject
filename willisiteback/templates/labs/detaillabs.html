@@ -39,13 +39,16 @@
                     <img src="{% static 'images/erwilli.jpg' %}" alt=""/>
                 </figure>
                 <h4>
-                    Willians Nieves
+                    {{info_author.0.name | title}} {{info_author.0.lastname | title}}
                 </h4>
+
                 <p>
-                    soy erwilli lacrita que deja la peluquita
+                    {{info_author.0.post_description}}
                 </p>
             </div>
         </section>
+
+        {% if lab_detail.is_comment  %}
 
         <section class="medium-12 columns comments-area-wrapper">
             <div class="comments-area">
@@ -80,18 +83,17 @@
                     <img src="{% static 'images/erwilli.jpg' %}" alt=""/>
                 </figure>
                 <h4>
-                    Willians Nieves
-                    <spa>
-                        20/05/2015 - 14:00 pm
-                    </spa>
+                    {{info_author.0.name | title}} {{info_author.0.lastname | title}}
                 </h4>
+
                 <p>
-                    soy erwilli lacrita que deja la peluquita
+                    {{info_author.0.post_description}}
                 </p>
                 <hr/>
 
             </div>
         </section>
+        {% endif %}
 	</section>
 {% endblock content %}
 
