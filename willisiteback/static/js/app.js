@@ -2,11 +2,60 @@ function log(){
 	console.log(arguments);
 }
 
+var csrftoken = $.cookie('csrftoken');
+
+
+function csrfSafeMethod(method) {
+    // these HTTP methods do not require CSRF protection
+    return (/^(GET|HEAD|OPTIONS|TRACE)$/.test(method));
+}
+
+$.ajaxSetup({
+    beforeSend: function(xhr, settings) {
+        if (!csrfSafeMethod(settings.type) && !this.crossDomain) {
+            xhr.setRequestHeader("X-CSRFToken", csrftoken);
+        }
+    }
+});
+
+function comment(){
+	$(".custom-comment-btn").on("click", function(e){
+		e.preventDefault();
+
+		var $comment = $("#comment").val();
+		var $nameNetwork = $(".social-picture img").attr("data-network");
+		var $userName = $(".social-name span").text();
+		var $imageProfile = $(".social-picture img").attr("src");
+
+
+		var data_comments = {
+			comment: $comment,
+			network: $nameNetwork,
+			username: $userName,
+			image: $imageProfile
+		}
+
+		console.log(data_comments);
+
+		$.ajax({
+			url: "http://localhost:8000/comments/",
+			dataType: "json",
+			type: "POST",
+			data: JSON.stringify(data_comments),
+			success: function(response){
+				console.log(response)
+			} 
+		})
+		
+	})
+}
+
 function socialLogin(){
 	$nameButton = "";
 
 	hello.init({
-		'twitter' : 'Xg0xqLocwwVqOL9jK0KdmL7aS'
+		'twitter' : 'Xg0xqLocwwVqOL9jK0KdmL7aS',
+		'facebook': '788783481157622'
 	})
 	$(".social-button").on("click", function(e){
 		e.preventDefault()
@@ -24,17 +73,62 @@ function socialLogin(){
 				.then( function(p){
 					// Put in page
 					//document.getElementById('login').innerHTML = "<img src='"+ p.thumbnail + "' width=24/>Connected to "+ network+" as " + p.name;
-					$("#form-comment-wrapper .social-picture img").attr("src", p.profile_image_url);
-					console.log(p)
+					$(".social-buttons-wrapper").addClass("hideCommentButtons");
+					var bigImageProfile = p.profile_image_url.replace("_normal", "");
+
+					$("#form-comment-wrapper .social-picture img").attr("src", bigImageProfile);
+					$("#form-comment-wrapper .social-picture img").attr("data-network",$nameButton);
+					$("#form-comment-wrapper .social-name span").text("@"+p.screen_name);
+
+					$("#form-comment-wrapper").slideDown().show();
+					//console.log(p)
 				}, log );
 				break;
 			case "facebook":
-				console.log("llamar a facebook")
+				var facebook = hello($nameButton);
+				// Login
+				facebook.login().then( function(r){
+					// Get Profile
+					//console.log(r);
+					return facebook.api('me');
+				}, log )
+				.then( function(p){
+					// Put in page
+					//document.getElementById('login').innerHTML = "<img src='"+ p.thumbnail + "' width=24/>Connected to "+ network+" as " + p.name;
+					$(".social-buttons-wrapper").addClass("hideCommentButtons");
+					var bigImageProfile = "http://graph.facebook.com/"+p.id+"/picture?type=large";
+
+					$("#form-comment-wrapper .social-picture img").attr("src", bigImageProfile);
+					$("#form-comment-wrapper .social-picture img").attr("data-network",$nameButton);
+					$("#form-comment-wrapper .social-name span").text(p.name);
+
+					$("#form-comment-wrapper").slideDown().show();
+					//console.log(p)
+				}, log );
 				break;
 			default:
 				console.log("algo");
 		}
 
+	})
+
+	$(".social-name a").on("click", function(e){
+		e.preventDefault();
+
+		var social_network = hello($nameButton);
+
+		social_network.logout().then(
+			function(e){
+				$("#form-comment-wrapper").slideUp().hide();
+				$(".social-buttons-wrapper").removeClass("hideCommentButtons");
+				$("#form-comment-wrapper .social-name span").text("");
+			},
+
+			function(e){
+				console.log(e.error.message);
+			}
+
+		)
 	})
 }
 
@@ -74,5 +168,7 @@ $(function(){
 	displayMoreProfile();
 
 	socialLogin();
+
+	comment();
     //dynamicCaptionMasonry();
 })

@@ -2,13 +2,17 @@ from django.http import HttpResponse
 from django.shortcuts import render
 
 # Create your views here.
-from django.views.generic import TemplateView, DetailView, ListView
+from django.views.generic import TemplateView, DetailView, ListView, CreateView
+from django.views.decorators.csrf import csrf_protect
+from django.utils.decorators import method_decorator
 from apps.biography.models import Biography
 from apps.portfolios.models import Portfolio
 from apps.categories.models import Category
 from apps.labs.models import Lab
 from apps.tutorials.models import Tutorial
-
+from apps.comments.models import Comment
+from django import http
+import json
 
 class HomeViewMixin(object):
 
@@ -151,3 +155,47 @@ class DetailPortfolioView(DetailView):
             queryset = super(DetailPortfolioView, self).get_queryset()
 
         return queryset
+
+
+
+class JSONResponseMixin(object):
+    def render_to_response(self, context):
+        "Returns a JSON response containing 'context' as payload"
+        return self.get_json_response(self.convert_context_to_json(context))
+
+    def get_json_response(self, content, **httpresponse_kwargs):
+        "Construct an `HttpResponse` object."
+        return http.HttpResponse(content,
+                                 content_type='application/json',
+                                 **httpresponse_kwargs)
+
+    def convert_context_to_json(self, context):
+        "Convert the context dictionary into a JSON object"
+        # Note: This is *EXTREMELY* naive; in reality, you'll need
+        # to do much more complex handling to ensure that arbitrary
+        # objects -- such as Django model instances or querysets
+        # -- can be serialized as JSON.
+        return json.dumps(context)
+
+class CommentsView(JSONResponseMixin, CreateView):
+    model = Comment
+    template_name = 'comments/comments.html'
+
+    @method_decorator(csrf_protect)
+    def post(self, request, *args, **kwargs):
+
+        print(request.POST.dict())
+
+        data = request.POST
+
+        return self.render_to_response(data)
+
+    def render_to_response(self, context):
+        return self.render_to_response(self, context)
+    # def render_to_response(self, context):
+    #     if self.request.is_ajax():
+    #         return JSONResponseMixin.render_to_response(self, context)
+    #     else:
+    #         return self.render_to_response(self, context)
+
+

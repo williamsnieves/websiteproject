@@ -7,6 +7,7 @@ class Comment(models.Model):
     destination=models.CharField(max_length=255)
     created=models.DateField()
     username=models.CharField(max_length=255)
+    link_profile_image=models.CharField(max_length=255)
 
     def __str__(self):
         return self.comment
