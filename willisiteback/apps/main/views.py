@@ -184,18 +184,23 @@ class CommentsView(JSONResponseMixin, CreateView):
     @method_decorator(csrf_protect)
     def post(self, request, *args, **kwargs):
 
-        print(request.POST.dict())
+        for items in request.POST:
+            data = items
 
-        data = request.POST
+        data_json = json.loads(data)
+
+        comment = Comment(comment=data_json['comment'], destination=data_json['network'], username=data_json['username'], link_profile_image=data_json['image'])
+        comment.save()
 
         return self.render_to_response(data)
 
     def render_to_response(self, context):
         return self.render_to_response(self, context)
-    # def render_to_response(self, context):
-    #     if self.request.is_ajax():
-    #         return JSONResponseMixin.render_to_response(self, context)
-    #     else:
-    #         return self.render_to_response(self, context)
+
+    def render_to_response(self, context):
+        if self.request.is_ajax():
+            return JSONResponseMixin.render_to_response(self, context)
+        else:
+            return self.render_to_response(self, context)
 
 
