@@ -66,7 +66,7 @@
 
                 <div id="form-comment-wrapper">
                     <figure class="social-picture">
-                      <img src="{% static 'images/erwilli.jpg' %}" data-network="" alt="" width="73"/>
+                          <img src="{% static 'images/erwilli.jpg' %}" data-network="" data-id-tutorial="{{tutorial_detail.id}}" alt="" width="73"/>
                     </figure>
                     <h4 class="social-name">
                         <span></span>
@@ -81,47 +81,36 @@
             </div>
 
             {% if tutorial_detail.is_comment  %}
-            <div class="comments-area">
-                <h3>Comentarios <span>(50)</span></h3>
-                <figure>
-                    <img src="{% static 'images/erwilli.jpg' %}" alt=""/>
-                </figure>
-                <h4>
-                    Willians Nieves
-                    <spa>
-                        20/05/2015 - 14:00 pm
-                    </spa>
-                </h4>
-                <p>
-                    soy erwilli lacrita que deja la peluquita
-                </p>
-                <hr/>
-                <figure>
-                    <img src="{% static 'images/erwilli.jpg' %}" alt=""/>
-                </figure>
-                <h4>
-                    Willians Nieves
-                    <spa>
-                        20/05/2015 - 14:00 pm
-                    </spa>
-                </h4>
-                <p>
-                    soy erwilli lacrita que deja la peluquita
-                </p>
-                <hr/>
-                <figure>
-                    <img src="{% static 'images/erwilli.jpg' %}" alt=""/>
-                </figure>
-                <h4>
-                    Willians Nieves
-                    <spa>
-                        20/05/2015 - 14:00 pm
-                    </spa>
-                </h4>
-                <p>
-                    soy erwilli lacrita que deja la peluquita
-                </p>
-                <hr/>
+            <div class="comments-area" id="wrapper-comments">
+                <h3>Comentarios <span>({{comment_counter}})</span></h3>
+                {% for comment in comments %}
+                    {% if comment.destination == 'facebook' %}
+                    <figure>
+                        <img src="{{comment.link_profile_image|add:'?type=large'}}" alt=""/>
+                    </figure>
+                    {% endif %}
+
+                    {% if comment.destination == 'twitter' %}
+                    <figure>
+                        <img src="{{comment.link_profile_image}}" alt=""/>
+                    </figure>
+                    {% endif %}
+
+                    <h4>
+                        {{comment.username}}
+                        <spa>
+                            {{comment.created | date:"d/m/Y h:i a"}}
+                        </spa>
+                    </h4>
+                    <p>
+                        {{comment.comment}}
+                    </p>
+                    <hr/>
+
+                 {% empty %}
+                <p>No hay comentarios por el momento</p>
+
+                {% endfor %}
 
             </div>
             {% endif %}
@@ -133,7 +122,6 @@
 {% block libs %}
     <!-- Go to www.addthis.com/dashboard to customize your tools -->
     <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-54b537341c6f6073" async="async"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
 
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/monokai_sublime.min.css">
     <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js"></script>

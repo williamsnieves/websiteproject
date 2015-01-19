@@ -1,3 +1,4 @@
+import datetime
 from django.http import HttpResponse
 from django.shortcuts import render
 
@@ -13,6 +14,7 @@ from apps.tutorials.models import Tutorial
 from apps.comments.models import Comment
 from django import http
 import json
+from django.core import serializers
 
 class HomeViewMixin(object):
 
@@ -77,8 +79,19 @@ class DetailLabsView(DetailView):
     def get_context_data(self, **kwargs):
         context = super(DetailLabsView, self).get_context_data(**kwargs)
         context['isImage'] = True
-        context["info_author"] = Biography.objects.all();
+        context["info_author"] = Biography.objects.all()
+        context["comment_counter"] = Comment.objects.filter(lab_id=self.object.id).count()
+        self.object = self.get_object()
+        context["comments"] = Comment.objects.filter(lab_id=self.object.id)
         return context
+
+    def query_set(self):
+        if self.kwargs.get('slug'):
+            queryset = self.model.objects.filter(slug=self.kwargs['slug'])
+        else:
+            queryset = super(DetailLabsView, self).get_queryset()
+
+        return queryset
 
 class TutorialView(ListView):
     model = Tutorial
@@ -97,7 +110,14 @@ class DetailTutorialView(DetailView):
 
     def get_context_data(self, **kwargs):
         context = super(DetailTutorialView, self).get_context_data(**kwargs)
-        context["info_author"] = Biography.objects.all();
+        context["info_author"] = Biography.objects.all()
+        context["comment_counter"] = Comment.objects.filter(tutorial_id=self.object.id).count()
+
+        self.object = self.get_object()
+        context["comments"] = Comment.objects.filter(tutorial_id=self.object.id)
+
+        print(context)
+
         return context
 
     def query_set(self):
@@ -179,6 +199,7 @@ class JSONResponseMixin(object):
 
 class CommentsView(JSONResponseMixin, CreateView):
     model = Comment
+    context_object_name = "comment_detail"
     template_name = 'comments/comments.html'
 
     @method_decorator(csrf_protect)
@@ -188,11 +209,30 @@ class CommentsView(JSONResponseMixin, CreateView):
             data = items
 
         data_json = json.loads(data)
+        print(data_json)
 
-        comment = Comment(comment=data_json['comment'], destination=data_json['network'], username=data_json['username'], link_profile_image=data_json['image'])
+        if data_json['id_tutorial']:
+            tutorial = Tutorial.objects.get(id=int(data_json['id_tutorial']))
+            comment = Comment(comment=data_json['comment'], destination=data_json['network'], created=datetime.datetime.today(), username=data_json['username'], link_profile_image=data_json['image'], tutorial_id=tutorial)
+
+
+        if data_json['id_lab']:
+            lab = Lab.objects.get(id=int(data_json['id_lab']))
+            comment = Comment(comment=data_json['comment'], destination=data_json['network'], created=datetime.datetime.today(), username=data_json['username'], link_profile_image=data_json['image'], lab_id=lab)
+
         comment.save()
 
-        return self.render_to_response(data)
+        comments = Comment.objects.all()
+        comments_serialize = serializers.serialize('json', comments)
+        comments_load = json.loads(comments_serialize)
+        data_comments = json.dumps(comments_load[0])
+
+        print(comments_serialize)
+
+        data_json["commet_count"] = Comment.objects.count()
+        data_json["comments"] = comments_serialize
+
+        return self.render_to_response(data_json)
 
     def render_to_response(self, context):
         return self.render_to_response(self, context)

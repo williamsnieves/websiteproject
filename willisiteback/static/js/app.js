@@ -24,18 +24,32 @@ function comment(){
 
 		var $comment = $("#comment").val();
 		var $nameNetwork = $(".social-picture img").attr("data-network");
+		var $id_tutorial = $(".social-picture img").attr("data-id-tutorial") || null;
+		var $id_lab = $(".social-picture img").attr("data-id-lab") || null;
 		var $userName = $(".social-name span").text();
-		var $imageProfile = $(".social-picture img").attr("src");
+
+		var $imageProfile = "";
+
+		if($nameNetwork == 'facebook'){
+			var $tempimgurl = $(".social-picture img").attr("src");
+			$tempimgurl = $tempimgurl.replace("?type=large", "");
+			$imageProfile  = $tempimgurl;
+
+		}else{
+			$imageProfile = $(".social-picture img").attr("src");	
+		}
+		
 
 
 		var data_comments = {
 			comment: $comment,
 			network: $nameNetwork,
 			username: $userName,
-			image: $imageProfile
+			image: $imageProfile,
+			id_tutorial: $id_tutorial,
+			id_lab: $id_lab
 		}
 
-		console.log(data_comments);
 
 		$.ajax({
 			url: "http://localhost:8000/comments/",
@@ -44,6 +58,14 @@ function comment(){
 			data: JSON.stringify(data_comments),
 			success: function(response){
 				console.log(response)
+
+				$("#form-comment-wrapper").slideUp(function(){
+					$(this).hide();
+					$(".social-buttons-wrapper").removeClass("hideCommentButtons");
+					$("#form-comment-wrapper .social-name span").text("");
+					window.location.reload();
+				});
+
 			} 
 		})
 		
