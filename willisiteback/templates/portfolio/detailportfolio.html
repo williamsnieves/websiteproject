@@ -23,6 +23,7 @@
 
 	<section class="row web-page">
 		<section class="medium-12 columns detail-images-tablet">
+            <div class="addthis_sharing_toolbox"></div>
 			<figure>
 				<img src="{% static 'images/detailimg1tablet.jpg' %}" alt="">
 				<figcaption>
@@ -41,3 +42,8 @@
 		</section>
 	</section>
 {% endblock content %}
+{% block libs %}
+        <!-- Go to www.addthis.com/dashboard to customize your tools -->
+    <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-54b537341c6f6073" async="async"></script>
+
+{% endblock libs %}
