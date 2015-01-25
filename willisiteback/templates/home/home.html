@@ -316,7 +316,7 @@
 					<figure>
 						<img src="{% static 'images/left-brainweb.png' %}" alt="" />
 					</figure>
-					<div class="skill-image">
+					<div class="skill-image" id="container-circle2">
 
 					</div>
 					<div class="skill-image">
@@ -368,7 +368,7 @@
 					<figure>
 						<img src="{% static 'images/right-brainweb.png' %}" alt="">
 					</figure>
-					<div class="skill-image-right">
+					<div class="skill-image-right" id="container-circle">
 
 					</div>
 					<div class="skill-image-right">
@@ -411,3 +411,9 @@
 
 
 {% endblock content %}
+
+{% block libs%}
+        <script src="{% static 'lib/progressbar.min.js' %}"></script>
+        <script src="{% static 'js/circles.js' %}"></script>
+
+{% endblock libs%}
