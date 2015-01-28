@@ -312,91 +312,94 @@
 		<section class="large-6 medium-6 columns wrapper-offset-left-web-brain"></section>
 		<section class="row">
 			<section class="large-12 medium-12 columns brain-wrapper-web">
-				<section class="large-6 medium-6 columns brain-left-content-web">
+				<section class="large-6 medium-6 columns brain-left-content-web" id="leftSideBrain">
 					<figure>
 						<img src="{% static 'images/left-brainweb.png' %}" alt="" />
 					</figure>
-					<div class="skill-image" id="container-circle2">
+					<div class="skill-image" id="skill-left-1">
 
 					</div>
-					<div class="skill-image">
+					<div class="skill-image" id="skill-left-2">
 
 					</div>
-					<div class="skill-image">
+					<div class="skill-image" id="skill-left-3">
 
 					</div>
-					<div class="skill-image">
+					<div class="skill-image" id="skill-left-4">
 
 					</div>
-					<div class="skill-image">
+					<div class="skill-image" id="skill-left-5">
 
 					</div>
 
-
-					<div class="baseline-brain"></div>
-					<h6 class="title-skill">html 5</h6>
-					<div class="topline-brain"></div>
-
-
-					<div class="baseline-brain"></div>
-					<h6 class="title-skill">html 5</h6>
-					<div class="topline-brain"></div>
+                        <div class="baseline-brain"></div>
+                        <h6 class="title-skill first-skill" data-amount="{{skills.0.amount}}">{{skills.0.name}}</h6>
+                        <div class="topline-brain"></div>
 
 
-					<div class="baseline-brain-first"></div>
-					<h6 class="title-skill">html 5</h6>
-					<div class="topline-brain-first"></div>
+                        <div class="baseline-brain"></div>
+                        <h6 class="title-skill second-skill" data-amount="{{skills.1.amount}}">{{skills.1.name}}</h6>
+                        <div class="topline-brain"></div>
 
 
-
-					<div class="baseline-brain-second"></div>
-					<h6 class="title-skill">html 5</h6>
-					<div class="topline-brain-second"></div>
+                        <div class="baseline-brain-first"></div>
+                        <h6 class="title-skill third-skill" data-amount="{{skills.2.amount}}">{{skills.2.name}}</h6>
+                        <div class="topline-brain-first"></div>
 
 
 
-					<div class="baseline-brain-third"></div>
-					<h6 class="title-skill">html 5</h6>
-					<div class="topline-brain-third"></div>
+                        <div class="baseline-brain-second"></div>
+                        <h6 class="title-skill fourth-skill" data-amount="{{skills.3.amount}}">{{skills.3.name}}</h6>
+                        <div class="topline-brain-second"></div>
+
+
+
+                        <div class="baseline-brain-third"></div>
+                        <h6 class="title-skill fifth-skill" data-amount="{{skills.4.amount}}">{{skills.4.name}}</h6>
+                        <div class="topline-brain-third"></div>
 
 
 
 					<div class="baseline-brain-fourth"></div>
 					<div class="topline-brain-fourth"></div>
+
 				</section>
 				<section class="large-6 medium-6 columns brain-right-content-web">
 					<figure>
 						<img src="{% static 'images/right-brainweb.png' %}" alt="">
 					</figure>
-					<div class="skill-image-right" id="container-circle">
+					<div class="skill-image-right" id="skill-right-1">
 
 					</div>
-					<div class="skill-image-right">
+					<div class="skill-image-right" id="skill-right-2">
 
 					</div>
-					<div class="skill-image-right">
+					<div class="skill-image-right" id="skill-right-3">
 
 					</div>
-					<div class="skill-image-right">
+					<div class="skill-image-right" id="skill-right-4">
 
 					</div>
 
 
 					<div class="baseline-brain-right"></div>
-					<h6 class="title-skill-right">html 5</h6>
+					<h6 class="title-skill-right first-skill-right" data-amount="{{skills.5.amount}}">{{skills.5.name}}</h6>
 					<div class="topline-brain-right"></div>
 
 
 					<div class="baseline-brain-right"></div>
+                    <h6 class="title-skill-right second-skill-right" data-amount="{{skills.6.amount}}">{{skills.6.name}}</h6>
 					<div class="topline-brain-right"></div>
 
 
 					<div class="baseline-brain-first-right"></div>
+                    <h6 class="title-skill-right third-skill-right" data-amount="{{skills.7.amount}}">{{skills.7.name}}</h6>
 					<div class="topline-brain-first-right"></div>
 
 
 
 					<div class="baseline-brain-second-right"></div>
+                    <h6 class="title-skill-right fourth-skill-right" data-amount="{{skills.8.amount}}">{{skills.8.name}}</h6>
 					<div class="topline-brain-second-right"></div>
 
 

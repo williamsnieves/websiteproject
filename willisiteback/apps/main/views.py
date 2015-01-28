@@ -12,6 +12,7 @@ from apps.categories.models import Category
 from apps.labs.models import Lab
 from apps.tutorials.models import Tutorial
 from apps.comments.models import Comment
+from apps.skills.models import Skill
 from django import http
 import json
 from django.core import serializers
@@ -22,8 +23,10 @@ class HomeViewMixin(object):
         context = super(HomeViewMixin, self).get_context_data(**kwargs)
         context_object_name="home_list"
         profile = Biography.objects.all()
+        skills = Skill.objects.all()
 
         context['profile'] = profile
+        context['skills'] = skills
 
         for prof in profile:
             listdesc = prof.category_list_short.split(",")

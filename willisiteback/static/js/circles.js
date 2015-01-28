@@ -1,5 +1,8 @@
 $(function(){
-	var circle = new ProgressBar.Circle('#container-circle', {
+
+	
+
+	/*var circleLeftOne = new ProgressBar.Circle('#container-circle', {
     	color: '#aaa',
     	strokeWidth: 10,
     	duration: 2000,
@@ -12,9 +15,12 @@ $(function(){
         	bar.setText((bar.value() * 100).toFixed(0) + "%");
     	}
 	});
-	circle.animate(1);
-	var target;
-	var circle2 = new ProgressBar.Circle('#container-circle2', {
+	circle.animate(1);*/
+
+
+	window.onload = function(){
+		var target;
+	var circleLeftOne = new ProgressBar.Circle('#skill-left-1', {
     	color: '#00b4cc',
     	strokeWidth: 10,
     	duration: 2000,
@@ -26,7 +32,7 @@ $(function(){
 	    step: function(state, bar) {
 	    	bar.setText((bar.value() * 100).toFixed(0) + "%");
 	    	target = bar.value();
-	    	if((target * 100).toFixed(0) == 60){
+	    	if((target * 100).toFixed(0) == $(".first-skill").attr("data-amount")){
 				
 	    		bar.stop();
 	    	}       	
@@ -35,7 +41,214 @@ $(function(){
 
 	});
 
-	circle2.animate(1);
+	circleLeftOne.animate(1);
+
+
+	var target;
+	var circleLeftTwo = new ProgressBar.Circle('#skill-left-2', {
+    	color: '#00b4cc',
+    	strokeWidth: 10,
+    	duration: 2000,
+    	text: {
+        	value: '0'
+    	},
+	    from: { color: '#aaa', width: 0 },
+	    to: { color: '#666', width: 10 },
+	    step: function(state, bar) {
+	    	bar.setText((bar.value() * 100).toFixed(0) + "%");
+	    	target = bar.value();
+	    	if((target * 100).toFixed(0) == $(".second-skill").attr("data-amount")){
+				
+	    		bar.stop();
+	    	}       	
+
+    	}
+
+	});
+
+	circleLeftTwo.animate(1);
+
+
+	var target;
+	var circleLeftThree = new ProgressBar.Circle('#skill-left-3', {
+    	color: '#00b4cc',
+    	strokeWidth: 10,
+    	duration: 2000,
+    	text: {
+        	value: '0'
+    	},
+	    from: { color: '#aaa', width: 0 },
+	    to: { color: '#666', width: 10 },
+	    step: function(state, bar) {
+	    	bar.setText((bar.value() * 100).toFixed(0) + "%");
+	    	target = bar.value();
+	    	if((target * 100).toFixed(0) == $(".third-skill").attr("data-amount")){
+				
+	    		bar.stop();
+	    	}       	
+
+    	}
+
+	});
+
+	circleLeftThree.animate(1);
+
+
+	var target;
+	var circleLeftFour = new ProgressBar.Circle('#skill-left-4', {
+    	color: '#00b4cc',
+    	strokeWidth: 10,
+    	duration: 2000,
+    	text: {
+        	value: '0'
+    	},
+	    from: { color: '#aaa', width: 0 },
+	    to: { color: '#666', width: 10 },
+	    step: function(state, bar) {
+	    	bar.setText((bar.value() * 100).toFixed(0) + "%");
+	    	target = bar.value();
+	    	if((target * 100).toFixed(0) == $(".fourth-skill").attr("data-amount")){
+				
+	    		bar.stop();
+	    	}       	
+
+    	}
+
+	});
+
+	circleLeftFour.animate(1);
+
+
+	var target;
+	var circleLeftFive = new ProgressBar.Circle('#skill-left-5', {
+    	color: '#00b4cc',
+    	strokeWidth: 10,
+    	duration: 2000,
+    	text: {
+        	value: '0'
+    	},
+	    from: { color: '#aaa', width: 0 },
+	    to: { color: '#666', width: 10 },
+	    step: function(state, bar) {
+	    	bar.setText((bar.value() * 100).toFixed(0) + "%");
+	    	target = bar.value();
+	    	if((target * 100).toFixed(0) == $(".fifth-skill").attr("data-amount")){
+				
+	    		bar.stop();
+	    	}       	
+
+    	}
+
+	});
+
+	circleLeftFive.animate(1);
+
+
+
+
+	var target;
+	var circleRightOne = new ProgressBar.Circle('#skill-right-1', {
+    	color: '#aaa',
+    	strokeWidth: 10,
+    	duration: 2000,
+    	text: {
+        	value: '0'
+    	},
+	    from: { color: '#aaa', width: 0 },
+	    to: { color: '#666', width: 10 },
+	    step: function(state, bar) {
+	    	bar.setText((bar.value() * 100).toFixed(0) + "%");
+	    	target = bar.value();
+	    	if((target * 100).toFixed(0) == $(".first-skill-right").attr("data-amount")){
+				
+	    		bar.stop();
+	    	}       	
+
+    	}
+
+	});
+
+	circleRightOne.animate(1);
+
+
+	var target;
+	var circleRightTwo = new ProgressBar.Circle('#skill-right-2', {
+    	color: '#aaa',
+    	strokeWidth: 10,
+    	duration: 2000,
+    	text: {
+        	value: '0'
+    	},
+	    from: { color: '#aaa', width: 0 },
+	    to: { color: '#666', width: 10 },
+	    step: function(state, bar) {
+	    	bar.setText((bar.value() * 100).toFixed(0) + "%");
+	    	target = bar.value();
+	    	if((target * 100).toFixed(0) == $(".second-skill-right").attr("data-amount")){
+				
+	    		bar.stop();
+	    	}       	
+
+    	}
+
+	});
+
+	circleRightTwo.animate(1);
+
+
+	var target;
+	var circleRightThree = new ProgressBar.Circle('#skill-right-3', {
+    	color: '#aaa',
+    	strokeWidth: 10,
+    	duration: 2000,
+    	text: {
+        	value: '0'
+    	},
+	    from: { color: '#aaa', width: 0 },
+	    to: { color: '#666', width: 10 },
+	    step: function(state, bar) {
+	    	bar.setText((bar.value() * 100).toFixed(0) + "%");
+	    	target = bar.value();
+	    	if((target * 100).toFixed(0) == $(".third-skill-right").attr("data-amount")){
+				
+	    		bar.stop();
+	    	}       	
+
+    	}
+
+	});
+
+	circleRightThree.animate(1);
+
+
+	var target;
+	var circleRightFour = new ProgressBar.Circle('#skill-right-4', {
+    	color: '#aaa',
+    	strokeWidth: 10,
+    	duration: 2000,
+    	text: {
+        	value: '0'
+    	},
+	    from: { color: '#aaa', width: 0 },
+	    to: { color: '#666', width: 10 },
+	    step: function(state, bar) {
+	    	bar.setText((bar.value() * 100).toFixed(0) + "%");
+	    	target = bar.value();
+	    	if((target * 100).toFixed(0) == $(".fourth-skill-right").attr("data-amount")){
+				
+	    		bar.stop();
+	    	}       	
+
+    	}
+
+	});
+
+	circleRightFour.animate(1);
+	}
+
+	
+
+
 	/*circle2.animate(1, function(){
 		circle2.animate();
 	});*/
