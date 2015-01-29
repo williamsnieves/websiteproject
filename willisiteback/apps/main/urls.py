@@ -1,4 +1,6 @@
 from django.conf.urls import patterns, url
+from django.conf import settings
+from django.views.generic import TemplateView
 from .views import HomeView, PortfolioView, LabsView, TutorialView, SiteExperimentalView, DetailCategoryView, DetailPortfolioView, DetailTutorialView, DetailLabsView, CommentsView
 from .helpers import PortfolioHelper
 
@@ -14,3 +16,6 @@ urlpatterns = patterns('',
     url(r'^labs/(?P<slug>[\w\-]+)/$', DetailLabsView.as_view(), name='labs'),
     url(r'^site-experiment/$', SiteExperimentalView.as_view(), name='site-experiment'),
 )
+
+
+

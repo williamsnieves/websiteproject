@@ -1,8 +1,9 @@
 import datetime
 from django.http import HttpResponse
-from django.shortcuts import render
+from django.shortcuts import render, render_to_response
 
 # Create your views here.
+from django.template import RequestContext
 from django.views.generic import TemplateView, DetailView, ListView, CreateView
 from django.views.decorators.csrf import csrf_protect
 from django.utils.decorators import method_decorator
@@ -245,5 +246,22 @@ class CommentsView(JSONResponseMixin, CreateView):
             return JSONResponseMixin.render_to_response(self, context)
         else:
             return self.render_to_response(self, context)
+
+
+
+
+
+def handler404(request):
+    response = render_to_response('errors/404.html', {},
+                                  context_instance=RequestContext(request))
+    response.status_code = 404
+    return response
+
+
+def handler500(request):
+    response = render_to_response('errors/500.html', {},
+                                  context_instance=RequestContext(request))
+    response.status_code = 500
+    return response
 
 

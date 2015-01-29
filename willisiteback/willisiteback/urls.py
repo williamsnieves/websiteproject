@@ -23,6 +23,9 @@ router.register(r'labs', LabViewSet)
 router.register(r'tutorials', TutorialViewSet)
 router.register(r'comments', CommentViewSet)
 
+handler404 = 'apps.main.views.handler404'
+handler500 = 'apps.main.views.handler500'
+
 urlpatterns = patterns('',
     # Examples:
     # url(r'^$', 'willisiteback.views.home', name='home'),
@@ -33,4 +36,3 @@ urlpatterns = patterns('',
     url(r'^ckeditor/', include('ckeditor.urls')),
 
 )+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
-

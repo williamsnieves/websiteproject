@@ -1,26 +1,9 @@
 $(function(){
 
 	
-
-	/*var circleLeftOne = new ProgressBar.Circle('#container-circle', {
-    	color: '#aaa',
-    	strokeWidth: 10,
-    	duration: 2000,
-    	text: {
-        	value: '0'
-    	},
-	    from: { color: '#aaa', width: 0 },
-	    to: { color: '#666', width: 10 },
-	    step: function(state, bar) {
-        	bar.setText((bar.value() * 100).toFixed(0) + "%");
-    	}
-	});
-	circle.animate(1);*/
-
-
 	window.onload = function(){
 		var target;
-	var circleLeftOne = new ProgressBar.Circle('#skill-left-1', {
+		var circleLeftOne = new ProgressBar.Circle('#skill-left-1', {
     	color: '#00b4cc',
     	strokeWidth: 10,
     	duration: 2000,
