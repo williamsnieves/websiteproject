@@ -1,0 +1,39 @@
+{% load static from staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<title>Willians Nieves website - Desarrollo web, videogames y movil de profesionales para profesionales</title>
+    <link href='http://fonts.googleapis.com/css?family=VT323' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="{% static 'foundation/css/foundation.css' %}">
+    <link rel="stylesheet" href="{% static 'css/errors.css' %}">
+</head>
+<body>
+
+   <section class="row">
+       <section class="large-12 medium-12 small-12 columns">
+            <h1>Error 500 Page Not Found</h1>
+            <div id="gamezone">
+
+            </div>
+       </section>
+   </section>
+
+
+
+	<!--<script src="//localhost:35729/livereload.js"></script>-->
+	<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script src="{% static 'foundation/js/foundation.min.js' %}"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/phaser/2.2.2/phaser.min.js"></script>
+    <script src="{% static 'foundation/js/foundation.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/game/js/boot.js' %}"></script>
+	<script type="text/javascript" src="{% static 'js/game/js/load.js' %}"></script>
+	<script type="text/javascript" src="{% static 'js/game/js/menu.js' %}"></script>
+	<script type="text/javascript" src="{% static 'js/game/js/play.js' %}"></script>
+	<script type="text/javascript" src="{% static 'js/game/js/game.js' %}"></script>
+
+
+
+</body>
+</html>

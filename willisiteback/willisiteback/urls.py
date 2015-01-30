@@ -23,8 +23,8 @@ router.register(r'labs', LabViewSet)
 router.register(r'tutorials', TutorialViewSet)
 router.register(r'comments', CommentViewSet)
 
-handler404 = 'apps.main.views.handler404'
-handler500 = 'apps.main.views.handler500'
+#handler404 = 'apps.main.views.handler404'
+#handler500 = 'apps.main.views.handler500'
 
 urlpatterns = patterns('',
     # Examples:

@@ -1,6 +1,6 @@
 $(function(){
 
-	
+
 	window.onload = function(){
 		var target;
 		var circleLeftOne = new ProgressBar.Circle('#skill-left-1', {
@@ -16,9 +16,9 @@ $(function(){
 	    	bar.setText((bar.value() * 100).toFixed(0) + "%");
 	    	target = bar.value();
 	    	if((target * 100).toFixed(0) == $(".first-skill").attr("data-amount")){
-				
+
 	    		bar.stop();
-	    	}       	
+	    	}
 
     	}
 
@@ -41,9 +41,9 @@ $(function(){
 	    	bar.setText((bar.value() * 100).toFixed(0) + "%");
 	    	target = bar.value();
 	    	if((target * 100).toFixed(0) == $(".second-skill").attr("data-amount")){
-				
+
 	    		bar.stop();
-	    	}       	
+	    	}
 
     	}
 
@@ -66,9 +66,9 @@ $(function(){
 	    	bar.setText((bar.value() * 100).toFixed(0) + "%");
 	    	target = bar.value();
 	    	if((target * 100).toFixed(0) == $(".third-skill").attr("data-amount")){
-				
+
 	    		bar.stop();
-	    	}       	
+	    	}
 
     	}
 
@@ -91,9 +91,9 @@ $(function(){
 	    	bar.setText((bar.value() * 100).toFixed(0) + "%");
 	    	target = bar.value();
 	    	if((target * 100).toFixed(0) == $(".fourth-skill").attr("data-amount")){
-				
+
 	    		bar.stop();
-	    	}       	
+	    	}
 
     	}
 
@@ -116,9 +116,9 @@ $(function(){
 	    	bar.setText((bar.value() * 100).toFixed(0) + "%");
 	    	target = bar.value();
 	    	if((target * 100).toFixed(0) == $(".fifth-skill").attr("data-amount")){
-				
+
 	    		bar.stop();
-	    	}       	
+	    	}
 
     	}
 
@@ -143,9 +143,9 @@ $(function(){
 	    	bar.setText((bar.value() * 100).toFixed(0) + "%");
 	    	target = bar.value();
 	    	if((target * 100).toFixed(0) == $(".first-skill-right").attr("data-amount")){
-				
+
 	    		bar.stop();
-	    	}       	
+	    	}
 
     	}
 
@@ -168,9 +168,9 @@ $(function(){
 	    	bar.setText((bar.value() * 100).toFixed(0) + "%");
 	    	target = bar.value();
 	    	if((target * 100).toFixed(0) == $(".second-skill-right").attr("data-amount")){
-				
+
 	    		bar.stop();
-	    	}       	
+	    	}
 
     	}
 
@@ -193,9 +193,9 @@ $(function(){
 	    	bar.setText((bar.value() * 100).toFixed(0) + "%");
 	    	target = bar.value();
 	    	if((target * 100).toFixed(0) == $(".third-skill-right").attr("data-amount")){
-				
+
 	    		bar.stop();
-	    	}       	
+	    	}
 
     	}
 
@@ -218,9 +218,9 @@ $(function(){
 	    	bar.setText((bar.value() * 100).toFixed(0) + "%");
 	    	target = bar.value();
 	    	if((target * 100).toFixed(0) == $(".fourth-skill-right").attr("data-amount")){
-				
+
 	    		bar.stop();
-	    	}       	
+	    	}
 
     	}
 
@@ -229,7 +229,7 @@ $(function(){
 	circleRightFour.animate(1);
 	}
 
-	
+
 
 
 	/*circle2.animate(1, function(){

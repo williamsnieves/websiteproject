@@ -251,17 +251,11 @@ class CommentsView(JSONResponseMixin, CreateView):
 
 
 
-def handler404(request):
-    response = render_to_response('errors/404.html', {},
-                                  context_instance=RequestContext(request))
-    response.status_code = 404
-    return response
+def custom404(request):
+    return render(request, '404.html')
 
 
-def handler500(request):
-    response = render_to_response('errors/500.html', {},
-                                  context_instance=RequestContext(request))
-    response.status_code = 500
-    return response
+def custom500(request):
+    return render(request, '500.html')
 
 
