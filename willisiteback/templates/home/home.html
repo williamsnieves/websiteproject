@@ -118,76 +118,79 @@
 	</section>
 
 	<section class="row tablet-page">
-		<section class="medium-12 columns profile-desc-tablet" data-equalizer style="border: 1px solid red">
-			<div class="medium-6 columns" data-equalizer-watch>
+		<section class="medium-12 columns profile-desc-tablet">
+			<div class="medium-6 columns">
 				<div class="content-profile-description-tablet" >
-					<h2>Willians Nieves</h2>
-					<h4>Desarrollador de aplicaciones</h4>
-					<h4>Aplicaciones web</h4>
-					<h4>Aplicaciones moviles</h4>
-					<h4>Videogames</h4>
+					 {% for prof in profile %}
+				        <h2>{{prof.name | title}} {{prof.lastname | title}}</h2>
+                    {% endfor %}
+
+                    {% for prof in shortdescription %}
+			            <h4>{{prof}}</h4>
+                    {% endfor %}
+
 				</div>
 
 				<div class="content-profile-description-tablet">
-					<p>You think water moves fast? You should see ice. It moves like it has a mind. Like it knows it killed the world once and got a taste for murder. After the avalanche, it took us a week to climb out. Now, I don't know exactly when we turned on each other, but I know that seven of us survived the slide... and only five made it out. Now we took an oath, that I'm breaking now. We said we'd say it was the snow that killed the other two, but it wasn't. Nature is lethal but it doesn't hold a candle to man. </p>
-
+					{% for prof in profile %}
+                        <p>{{prof.large_description}}.</p>
+                    {% endfor %}
 				</div>
 			</div>
 
 			<figure class="medium-6 columns image-desc-tablet" data-equalizer-watch>
-				<img src="{% static 'images/profile-med.png' %}" alt="willians image" width="640" height="509" />
+				<img src="{% static 'images/profile-med-tablet.png' %}" alt="willians image" width="640" height="509" />
 			</figure>
 		</section>
 		<section class="medium-12 columns title-skill-tablet">
 			<h2>SKILLS</h2>
 		</section>
 		<section class="medium-6 columns left-brain-side">
-
 				<figure>
 					<img src="{% static 'images/left-brain.png' %}" alt="" />
 				</figure>
 
-				<div class="skill-image">
+				<div class="skill-image" id="skill-left-tablet-1">
 
 				</div>
-				<div class="skill-image">
+				<div class="skill-image" id="skill-left-tablet-2">
 
 				</div>
-				<div class="skill-image">
+				<div class="skill-image" id="skill-left-tablet-3">
 
 				</div>
-				<div class="skill-image">
+				<div class="skill-image" id="skill-left-tablet-4">
 
 				</div>
-				<div class="skill-image">
+				<div class="skill-image" id="skill-left-tablet-5">
 
 				</div>
 
 
 				<div class="baseline-brain"></div>
-				<h6 class="title-skill">html 5</h6>
+				<h6 class="title-skill first-skill" data-amount="{{skills.0.amount}}">{{skills.0.name}}</h6>
 				<div class="topline-brain"></div>
 
 
 				<div class="baseline-brain"></div>
-				<h6 class="title-skill">html 5</h6>
+				<h6 class="title-skill second-skill" data-amount="{{skills.1.amount}}">{{skills.1.name}}</h6>
 				<div class="topline-brain"></div>
 
 
 				<div class="baseline-brain-first"></div>
-				<h6 class="title-skill">html 5</h6>
+				<h6 class="title-skill third-skill" data-amount="{{skills.2.amount}}">{{skills.2.name}}</h6>
 				<div class="topline-brain-first"></div>
 
 
 
 				<div class="baseline-brain-second"></div>
-				<h6 class="title-skill">html 5</h6>
+				<h6 class="title-skill fourth-skill" data-amount="{{skills.3.amount}}">{{skills.3.name}}</h6>
 				<div class="topline-brain-second"></div>
 
 
 
 				<div class="baseline-brain-third"></div>
-				<h6 class="title-skill">html 5</h6>
+				<h6 class="title-skill fifth-skill" data-amount="{{skills.4.amount}}">{{skills.4.name}}</h6>
 				<div class="topline-brain-third"></div>
 
 
@@ -204,35 +207,38 @@
 					<img src="{% static 'images/right-brain.png' %}" alt="" />
 				</figure>
 
-				<div class="skill-image-right">
+				<div class="skill-image-right" id="skill-right-tablet-1">
 
-				</div>
-				<div class="skill-image-right">
+                </div>
+                <div class="skill-image-right" id="skill-right-tablet-2">
 
-				</div>
-				<div class="skill-image-right">
+                </div>
+                <div class="skill-image-right" id="skill-right-tablet-3">
 
-				</div>
-				<div class="skill-image-right">
+                </div>
+                <div class="skill-image-right" id="skill-right-tablet-4">
 
-				</div>
+                </div>
 
 
 				<div class="baseline-brain-right"></div>
-				<h6 class="title-skill-right">html 5</h6>
+				<h6 class="title-skill-right first-skill-right" data-amount="{{skills.5.amount}}">{{skills.5.name}}</h6>
 				<div class="topline-brain-right"></div>
 
 
 				<div class="baseline-brain-right"></div>
+                 <h6 class="title-skill-right second-skill-right" data-amount="{{skills.6.amount}}">{{skills.6.name}}</h6>
 				<div class="topline-brain-right"></div>
 
 
 				<div class="baseline-brain-first-right"></div>
+                <h6 class="title-skill-right third-skill-right" data-amount="{{skills.7.amount}}">{{skills.7.name}}</h6>
 				<div class="topline-brain-first-right"></div>
 
 
 
 				<div class="baseline-brain-second-right"></div>
+                 <h6 class="title-skill-right fourth-skill-right" data-amount="{{skills.8.amount}}">{{skills.8.name}}</h6>
 				<div class="topline-brain-second-right"></div>
 
 
@@ -414,3 +420,8 @@
 
 
 {% endblock content %}
+
+     {% block libs%}
+        <script src="{% static 'lib/progressbar.min.js' %}"></script>
+        <script src="{% static 'js/circles.js' %}"></script>
+    {% endblock libs%}

@@ -1,6 +1,53 @@
 {% extends 'base.html' %}
 {% load static from staticfiles %}
 {% block content %}
+    <section class="row small-page">
+		<div id="container-small-wall" class="free-wall">
+            {% for categories in category_list %}
+			<div class="box">
+				<figure class="effect-bubba">
+					<img src="{% static 'images/1.png' %}" alt="">
+
+                    <figcaption>
+						<h2><span>{{categories.title}}</span></h2>
+						<a href="{{categories.slug}}">View more</a>
+					</figcaption>
+
+				</figure>
+
+			</div>
+            {% empty %}
+            <div>
+                Aun no he creado apps en esta categoria pero estan cerca
+            </div>
+            {% endfor %}
+
+		</div>
+	</section>
+    <section class="row tablet-page">
+		<div id="container-tablet-wall" class="free-wall">
+            {% for categories in category_list %}
+			<div class="box">
+				<figure class="effect-bubba">
+					<img src="{% static 'images/1.png' %}" alt="">
+
+                    <figcaption>
+						<h2><span>{{categories.title}}</span></h2>
+						<a href="{{categories.slug}}">View more</a>
+					</figcaption>
+
+				</figure>
+
+			</div>
+            {% empty %}
+            <div>
+                Aun no he creado apps en esta categoria pero estan cerca
+            </div>
+            {% endfor %}
+
+		</div>
+	</section>
+
     <section class="row web-page">
 		<div id="container-wall" class="free-wall">
             {% for categories in category_list %}

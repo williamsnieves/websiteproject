@@ -361,6 +361,10 @@ header
 	
 	.tablet-page
 		display block
+		
+	
+	.web-page
+		display none
 
 	.icon-menu-willi
 		display none
@@ -579,24 +583,60 @@ header
 		&:nth-child(2)
 			top 1.5em
 			margin 0.3em 0 0 34%
+			z-index 9999
 		&:nth-child(3)
 			top 1.5em
 			margin 0.3em 0 0 10%
+			z-index 9999
 		&:nth-child(4)
 			top 2em
 			margin 0.3em 0 0 8.4em
+			z-index 9999
 		&:nth-child(5)
 			top 2.5em
 			margin 0.3em 0 0 12%
+			z-index 9999
 		&:nth-child(6)
 			top 3.5em
 			margin 0.3em 0 0 7em
-	
+			z-index 9999
+			
 	.title-skill-right
-		color white_color
+		color dark_gray
+		position absolute
+		top 0
+		font-weight bold
+	
+	h6.title-skill
 		position absolute
 		top 2em
-		margin 0 0 0 47%
+	
+	.first-skill
+		margin 0 0 0 14em
+	.second-skill
+		margin 3.5em 0 0 10.5em
+	
+	.third-skill
+		margin 7.5em 0 0 13em
+	
+	.fourth-skill
+		margin 11.5em 0 0 9em
+	
+	.fifth-skill
+		margin 15.5em 0 0 11em
+	
+	.first-skill-right
+		margin 2em 0 0 11em
+
+	.second-skill-right
+		margin 5.5em 0 0 15em
+	
+	.third-skill-right
+		margin 9.5em 0 0 12.5em
+	
+	.fourth-skill-right
+		margin 13.5em 0 0 14em	
+	
 	
 	.skill-image-right
 		background white_color
@@ -604,21 +644,26 @@ header
 		width 50px
 		height 50px
 		border-radius 50%
-		&:nth-child(1)
-			top 1.5em
-			margin 0.3em 0 0 54%
+		
 		&:nth-child(2)
 			top 5em
 			right 0
-			margin .3em 12% 0 0
+			margin -3em 12% 0 15em
+			z-index 9999
 		&:nth-child(3)
-			top 9em
+			top 5em
 			right 0
-			margin 0.3em 8.4em 0 0
+			margin 0.3em 8.4em 0 21em
+			z-index 9999
 		&:nth-child(4)
-			top 13em
+			top 5.5em
 			right 0
-			margin 0.3em 14% 0 0
+			margin 0.3em 14% 0 17.5em
+			z-index 9999
+		&:nth-child(5)
+			top 5em
+			margin 1.3em 0 0 21.5em
+			z-index 9999
 	
 		
 
@@ -628,7 +673,7 @@ header
 		height 300px
 		
 		&:nth-child(1)
-			background #2fa5e2
+			background blue_strong
 			h2
 				text-align center
 				position relative
@@ -636,7 +681,7 @@ header
 				a					
 					color white_color
 		&:nth-child(2)
-			background #2effe0
+			background blue_medium
 			position relative
 			h2
 				position relative
@@ -649,7 +694,7 @@ header
 					color white_color
 					//display block
 		&:nth-child(3)
-			background #c2ee5b
+			background blue_light
 			//position relative
 			h2
 				position relative
@@ -915,52 +960,86 @@ header
 		&:nth-child(2)
 			top 1.5em
 			left -11%
+			z-index 9999
 		&:nth-child(3)
-			top 5em
-			left: -4%
+			top 1.5em
+			left: -8%
+			z-index 9999
 		&:nth-child(4)
-			top 9em
-			left: -21%
+			top 2em
+			left: -23%
+			z-index 9999
 		&:nth-child(5)
-			top 13em
-			left:-2%
+			top 3em
+			left:-6%
+			z-index 9999
 		&:nth-child(6)
-			top 17em
-			left:-18%
+			top 3.5em
+			left:-22%
+			z-index 9999
 	
 	.skill-image-right
 		background white_color
 		position absolute
 		width 50px
-		height 50px
-		border-radius 20%
+		height 50px		
 		&:nth-child(2)
 			top 1.5em
 			right 0
-			margin 0.3em 20% 0 0
+			margin 0.3em 20% 0 71%
+			z-index 9999
 		&:nth-child(3)
-			top 5em
+			top 1.5em
 			right 0
-			margin 0.3em 5% 0 0
+			margin 0.3em 5% 0 84%
+			z-index 9999
 		&:nth-child(4)
-			top 9em
+			top 2em
 			right 0
-			margin 0.3em 19% 0 0
+			margin 0.3em 19% 0 75%
+			z-index 9999
 		&:nth-child(5)
-			top 13em
+			top 3em
 			right 0
-			margin 0.3em 5% 0 0
+			margin 0.3em 5% 0 83%
+			z-index 9999
 	
+		
+		
 	.title-skill-right
-		color white_color
+		color dark_gray
 		position absolute
-		top 2em
-		margin 0 0 0 47%
+		font-weight bold
 	
-	.title-skill
+	h6.title-skill
 		position absolute
 		top 2em
-		left -4%
+	
+	.first-skill
+		margin 0 0 0 9em
+	.second-skill
+		margin 3.5em 0 0 6.5em
+	
+	.third-skill
+		margin 7.5em 0 0 8em
+	
+	.fourth-skill
+		margin 11.5em 0 0 6em
+	
+	.fifth-skill
+		margin 15.5em 0 0 6.5em
+	
+	.first-skill-right
+		margin 2em 0 0 11em
+
+	.second-skill-right
+		margin 5.5em 0 0 14em
+	
+	.third-skill-right
+		margin 9.5em 0 0 12.1em
+	
+	.fourth-skill-right
+		margin 13.5em 0 0 12em
 
 	.baseline-brain
 		width 7.125em
@@ -971,6 +1050,17 @@ header
 		margin -0.4em 2.8em 0 0
 		background #fff
 		rotateline(36deg)
+		
+
+	.baseline-brain-fourth
+		width 50px
+		height 1px
+		position absolute
+		top 20em
+		right 0
+		margin 0 10.2em 0 0
+		background #fff
+		rotateline(40deg)
 	
 	.topline-brain
 		drawline(28%, 1px, absolute, 3.6em, 0, -0.1em, 9.2em, 0, 0, #fff)
