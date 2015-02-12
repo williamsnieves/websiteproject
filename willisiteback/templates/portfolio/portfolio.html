@@ -1,6 +1,34 @@
 {% extends 'base.html' %}
 {% load static from staticfiles %}
 {% block content %}
+       <section class="row small-page small-12">
+			<section class="potfolio-categories">
+
+                    <div class="item-categories">
+                        <div class="image-cat image-cat-1" style="background-image: url(http://lorempixel.com/640/480/technics/)"></div>
+                        <div class="mesh-image mesh-image-1"></div>
+                         <h3>
+                             <a href="{{categories.1}}">{{categories.1}}</a>
+                        </h3>
+                    </div>
+
+				<div class="item-categories">
+					<div class="image-cat" style="background-image: url(http://lorempixel.com/640/480/business/)"></div>
+					<div class="mesh-image mesh-image-2"></div>
+					 <h3>
+                             <a href="{{categories.0}}">{{categories.0}}</a>
+                        </h3>
+				</div>
+				<div class="item-categories">
+					<div class="image-cat" style="background-image: url(http://lorempixel.com/640/480/abstract/)"></div>
+					<div class="mesh-image mesh-image-3"></div>
+					 <h3>
+                             <a href="{{categories.2}}">{{categories.2}}</a>
+                     </h3>
+				</div>
+			</section>
+		</section>
+
     <section class="row tablet-page">
         {% for cat in categories %}
             <section class="medium-12 columns portfolio-first-tablet">

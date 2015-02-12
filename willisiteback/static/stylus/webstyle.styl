@@ -209,17 +209,7 @@ header
 	&:nth-child(3)
 		background #2effe0
 		position relative
-		&:after
-			border-left solid 50px transparent
-			border-right solid 50px transparent
-			border-top solid 20px #2effe0
-			content ""
-			height 0
-			left 50%
-			margin-left -50px
-			position absolute
-			top 100%
-			width 0
+		
 
 
 .contact-form-wrapper
@@ -284,6 +274,7 @@ header
 		transform scale(1)
 		-webkit-transition -webkit-transform 0s linear
 		transition transform 0s linear
+
 
 #line-input-name
 	border 0
@@ -351,6 +342,248 @@ header
 	border-bottom 1px solid #000
 	outline none
 	box-shadow none
+
+@media screen and (max-width:679px)
+	
+	.image-cat
+		position absolute
+		top 0
+		bottom 0
+		left 0
+		right 0
+		width 100%
+		height 100%
+		-webkit-background-size cover
+		background-size cover
+		background-repeat no-repeat
+		background-position 50% 0
+		-webkit-transition -webkit-transform .35s
+		transition transform .35s
+		-webkit-transition-timing-function ease-out
+		transition-timing-function ease-out
+		-webkit-backface-visibility hidden
+		backface-visibility hidden
+
+	.mesh-image
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		width: 100%;
+		height: 100%;
+		-webkit-background-size: cover;
+		background-size: cover;
+		background-repeat: no-repeat;
+		background-position: 50% 0;
+		-webkit-transition: -webkit-transform .35s;
+		transition: transform .35s;
+		-webkit-transition-timing-function: ease-out;
+		transition-timing-function: ease-out;
+		-webkit-backface-visibility: hidden;
+		backface-visibility: hidden;
+		opacity: .8;
+		-webkit-transition: opacity .4s;
+		transition: opacity .4s;
+		background-position: center center;
+
+	.image-cat-1
+		&:hover .mesh-image-1
+			-webkit-transform scale(1)
+			-ms-transform scale(1)
+			transform scale(1)
+			-webkit-transition -webkit-transform 0s linear
+			transition transform 0s linear
+
+	.mesh-image-1
+		background blue_strong
+	.mesh-image-2	
+		background blue_medium
+	.mesh-image-3
+		background blue_light
+		
+	.item-categories
+		position relative
+		height 15em
+		h3
+			margin 0
+			position relative
+			top 50%
+			text-align center
+			a
+				color dark_gray
+		&:nth-child(1)
+			background blue_strong;
+		&:nth-child(2)
+			background blue_medium
+		&:nth-child(3)
+			background blue_light
+			position relative			
+
+	.portfolio-first-tablet
+		margin 0
+		padding 0
+		height 300px
+		
+		&:nth-child(1)
+			background blue_strong
+			h2
+				text-align center
+				position relative
+				top 37%
+				a					
+					color white_color
+		&:nth-child(2)
+			background blue_medium
+			position relative
+			h2
+				position relative
+				top 37%
+				text-align center
+				//position relative
+				//bottom -10em
+				//margin 0 auto
+				a					
+					color white_color
+					//display block
+		&:nth-child(3)
+			background blue_light
+			//position relative
+			h2
+				position relative
+				top 37%
+				text-align center
+				//position absolute
+				//bottom 0
+				//width 100%
+				a					
+					color white_color
+	.box
+		float left
+		width 100%
+		overflow hidden
+		figure
+			margin 0
+		
+		figure figcaption,
+		figure figcaption > a
+			position absolute
+			top 0
+			left 0
+			width 100%
+			height 100%
+		
+		figure figcaption > a
+			z-index 1000
+			text-indent 200%
+			white-space nowrap
+			font-size 0
+			opacity 0
+		
+		figure h2 
+			word-spacing -0.15em
+			font-weight 300
+			
+		figure h2 span 
+			font-weight 800
+		
+
+		figure h2,
+		figure p
+			margin 0
+		
+
+		figure p 
+			letter-spacing 1px
+			font-size 68.5%
+		
+
+		figure.effect-bubba
+			margin 0
+
+		figure.effect-bubba
+			background blue_strong
+
+		figure.effect-bubba img 
+			opacity 0.7
+			-webkit-transition opacity 0.35s
+			transition opacity 0.35s
+
+
+		figure.effect-bubba:hover img 
+			opacity: 0.4
+		
+		figure.effect-bubba:hover img
+			opacity 0.1
+			-webkit-transform scale3d(2,2,1)
+			transform scale3d(2,2,1)
+		
+		figure.effect-bubba img
+			-webkit-transition opacity 0.35s, -webkit-transform 0.35s
+			transition opacity 0.35s, transform 0.35s
+
+
+		figure.effect-bubba figcaption::before,
+		figure.effect-bubba figcaption::after 
+			position absolute
+			top 10%
+			right: 10%
+			bottom: 10%
+			left 10%
+			content ''
+			opacity 0
+			-webkit-transition opacity 0.35s, -webkit-transform 0.35s
+			transition opacity 0.35s, transform 0.35s
+
+
+		figure.effect-bubba figcaption::before 
+			border-top 1px solid #fff
+			border-bottom 1px solid #fff
+			-webkit-transform scale(0,1);
+			transform scale(0,1)
+
+
+		figure.effect-bubba figcaption::after 
+			border-right 1px solid #fff
+			border-left 1px solid #fff
+			-webkit-transform scale(1,0)
+			transform scale(1,0)
+
+
+		figure.effect-bubba h2 
+			opacity 0
+			font-size 1em
+			text-align center
+			padding-top 30%
+			-webkit-transition -webkit-transform 0.35s
+			transition transform 0.35s
+			-webkit-transform translate3d(0,-20px,0)
+			transform translate3d(0,-20px,0)
+
+
+		figure.effect-bubba p 
+			padding 20% 2.5em
+			opacity 0
+			-webkit-transition opacity 0.35s, -webkit-transform 0.35s
+			transition opacity 0.35s, transform 0.35s
+			-webkit-transform translate3d(0,20px,0)
+			transform translate3d(0,20px,0)
+
+
+		figure.effect-bubba:hover figcaption::before,
+		figure.effect-bubba:hover figcaption::after,
+		figure.effect-bubba:hover h2, 
+			opacity 1
+			-webkit-transform scale(1)
+			transform: scale(1)
+
+
+		figure.effect-bubba:hover h2,
+		figure.effect-bubba:hover p 
+			opacity 1
+			-webkit-transform translate3d(0,0,0)
+			transform: translate3d(0,0,0)
+
 
 
 @media screen and (min-width:680px)
