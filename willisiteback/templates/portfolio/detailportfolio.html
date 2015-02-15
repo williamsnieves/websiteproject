@@ -1,6 +1,27 @@
 {% extends 'base.html' %}
 {% load static from staticfiles %}
 {% block content %}
+    <section class="row small-page">
+		<section class="small-12 columns detail-images-tablet">
+            <div class="addthis_sharing_toolbox"></div>
+			<figure>
+				<img src="{% static 'images/detailimg1tablet.jpg' %}" alt="">
+				<figcaption>
+					<h2>{{portfolio_detail.title}}</h2>
+					<p> {{portfolio_detail.description}}</p>
+					<a href=""><span class="icon-arrow-down"></span></a>
+				</figcaption>
+			</figure>
+			<div class="grid-button-tablet">
+				<a href="../"><span class="icon-grid"></span></a>
+			</div>
+			<div class="arrows-button-tablet">
+				<a href=""><span class="icon-arrow-left"></span></a>
+				<a href=""><span class="icon-arrow-right"></span></a>
+			</div>
+		</section>
+	</section>
+
     <section class="row tablet-page">
 		<section class="medium-12 columns detail-images-tablet">
             <div class="addthis_sharing_toolbox"></div>
