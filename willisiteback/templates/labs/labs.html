@@ -2,6 +2,136 @@
 {% load thumbnail %}
 {% load static from staticfiles %}
 {% block content %}
+    <section class="row small-page">
+		<div id="container-small-wall" class="free-wall">
+            {% for lab in lab_list %}
+                 {% if lab.is_thumb_image %}
+                    <div class="box lab-image-content">
+                        <figure>
+                            <img src="{% thumbnail lab.thumb lab.thumb_dims %}" alt="">
+                            <figcaption>
+                                 <a href="{{lab.slug}}">
+                                    <h3>{{lab.title}}</h3>
+                                 </a>
+                                <p>{{lab.short_description}}</p>
+                            </figcaption>
+                        </figure>
+
+                    </div>
+                {% endif %}
+
+                {% if lab.is_medium %}
+
+                <div class="box w2 text-content-lab-medium">
+                   <a href="{{lab.slug}}">
+                        <h3>{{lab.title}}</h3>
+                   </a>
+                    <p>
+                        {{lab.short_description}}
+                    </p>
+
+                </div>
+               {% endif %}
+
+               {% if lab.is_normal %}
+                    <div class="box w2 text-content-lab">
+                       <a href="{{lab.slug}}">
+                            <h3>{{lab.title}}</h3>
+                        </a>
+                        <p>
+                            {{lab.description}}
+                        </p>
+
+                    </div>
+               {% endif %}
+
+            {% if lab.is_light %}
+
+                    <div class="box w2 text-content-lab-light">
+                        <a href="{{lab.slug}}">
+                           <h3>{{lab.title}}</h3>
+                        </a>
+                        <p>
+                            {{lab.short_description}}
+                        </p>
+
+                    </div>
+             {% endif %}
+
+            {% empty %}
+               <div>No hay posts en el laboratorio</div>
+
+
+            {% endfor %}
+
+
+		</div>
+	</section>
+    <section class="row tablet-page">
+		<div id="container-tablet-wall" class="free-wall">
+            {% for lab in lab_list %}
+                 {% if lab.is_thumb_image %}
+                    <div class="box lab-image-content">
+                        <figure>
+                            <img src="{% thumbnail lab.thumb lab.thumb_dims %}" alt="">
+                            <figcaption>
+                                 <a href="{{lab.slug}}">
+                                    <h3>{{lab.title}}</h3>
+                                 </a>
+                                <p>{{lab.short_description}}</p>
+                            </figcaption>
+                        </figure>
+
+                    </div>
+                {% endif %}
+
+                {% if lab.is_medium %}
+
+                <div class="box w2 text-content-lab-medium">
+                   <a href="{{lab.slug}}">
+                        <h3>{{lab.title}}</h3>
+                   </a>
+                    <p>
+                        {{lab.short_description}}
+                    </p>
+
+                </div>
+               {% endif %}
+
+               {% if lab.is_normal %}
+                    <div class="box w2 text-content-lab">
+                       <a href="{{lab.slug}}">
+                            <h3>{{lab.title}}</h3>
+                        </a>
+                        <p>
+                            {{lab.description}}
+                        </p>
+
+                    </div>
+               {% endif %}
+
+            {% if lab.is_light %}
+
+                    <div class="box w2 text-content-lab-light">
+                        <a href="{{lab.slug}}">
+                           <h3>{{lab.title}}</h3>
+                        </a>
+                        <p>
+                            {{lab.short_description}}
+                        </p>
+
+                    </div>
+             {% endif %}
+
+            {% empty %}
+               <div>No hay posts en el laboratorio</div>
+
+
+            {% endfor %}
+
+
+		</div>
+	</section>
     <section class="row web-page">
 		<div id="container-wall" class="free-wall">
             {% for lab in lab_list %}
