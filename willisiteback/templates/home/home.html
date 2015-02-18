@@ -19,7 +19,7 @@
 				</p>
 			</div>
 		</section>
-		<section class="small-12">
+		<section class="small-12" id="profile">
 			<div class="bio-description">
 				<div class="info-title-profile">
 					<h2>Willians Nieves</h2>
@@ -46,15 +46,9 @@
 				</div>
 				<div class="list-skill">
 					<ul>
-						<li>Git</li>
-						<li>Scrum</li>
-						<li>PostgreSQL</li>
-						<li>OOP</li>
-						<li>SCRUM</li>
-						<li>Javascript</li>
-						<li>Django</li>
-						<li>Python</li>
-						<li>Node Js</li>
+                        {% for skill in skills %}
+                            <li>{{skill | title}}</li>
+                        {% endfor %}
 
 					</ul>
 				</div>
@@ -81,7 +75,7 @@
 				</div>
 			</section>
 		</section>
-		<section class="small-12">
+		<section class="small-12" id="contacto">
 			<div class="contact-form-wrapper">
 				<h2>Contacto</h2>
 				<form action="" id="contact-form">

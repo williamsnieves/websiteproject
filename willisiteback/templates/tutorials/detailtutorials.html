@@ -2,17 +2,211 @@
 {% load thumbnail %}
 {% load static from staticfiles %}
 {% block content %}
-    <section class="row tablet-page">
-		<section class="medium-12 columns detail-images-tablet">
+
+    <section class="row small-page">
+
+		<section class="medium-12 columns detail-images-small custom-content-wrapper">
+             <!-- Go to www.addthis.com/dashboard to customize your tools -->
+             <div class="addthis_sharing_toolbox"></div>
+            <h2>{{tutorial_detail.title}}</h2>
+            {% if tutorial_detail.is_image %}
 			<figure>
-				<img src="{% static 'images/detailimg1tablet.jpg' %}" alt="">
-				<figcaption>
-					<h2>{{portfolio_detail.title}}</h2>
-					<p> {{portfolio_detail.description}}</p>
-					<a href=""><span class="icon-arrow-down"></span></a>
-				</figcaption>
+				<img src="{% thumbnail tutorial_detail.photo 1000x400 %}"  alt="" >
 			</figure>
+            {% endif %}
+            <div>
+                {{tutorial_detail.description | safe}}
+            </div>
 		</section>
+
+        <section class="medium-12 columns comments-area-wrapper">
+            <div class="comments-area">
+                <h3>About the author</h3>
+                <figure>
+                    <img src="{% static 'images/erwilli.jpg' %}" alt=""/>
+                </figure>
+
+                <h4>
+                    {{info_author.0.name | title}} {{info_author.0.lastname | title}}
+                </h4>
+
+                <p>
+                    {{info_author.0.post_description}}
+                </p>
+            </div>
+        </section>
+
+
+        <section class="medium-12 columns comments-area-wrapper">
+
+            <div class="comments-area comments-login">
+                <h3>
+                    Quieres Comentar sobre el tutorial:
+                </h3>
+                <div class="large-12 columns social-buttons-wrapper">
+                    <div class="social-button twitter-button" data-name="twitter">
+                        <p>Twitter</p>
+                    </div>
+                    <div class="social-button facebook-button" data-name="facebook">
+                        <p>Facebook</p>
+                     </div>
+                </div>
+
+                <div id="form-comment-wrapper-small">
+                    <figure class="social-picture-small">
+                          <img src="{% static 'images/erwilli.jpg' %}" data-network="" data-id-tutorial="{{tutorial_detail.id}}" alt="" width="73"/>
+                    </figure>
+                    <h4 class="social-name-small">
+                        <span></span>
+                         <a href="">logout</a>
+                    </h4>
+
+                    <form id="form-comment-small">
+                       <textarea placeholder="Your comment here" class="contact" id="comment-small" name="comment" rows="10" cols="50"></textarea>
+                        <button class="info right custom-comment-btn">Comentar</button>
+                    </form>
+                </div>
+            </div>
+
+            {% if tutorial_detail.is_comment  %}
+            <div class="comments-area" id="wrapper-comments-small">
+                <h3>Comentarios <span>({{comment_counter}})</span></h3>
+                {% for comment in comments %}
+                    {% if comment.destination == 'facebook' %}
+                    <figure>
+                        <img src="{{comment.link_profile_image|add:'?type=large'}}" alt=""/>
+                    </figure>
+                    {% endif %}
+
+                    {% if comment.destination == 'twitter' %}
+                    <figure>
+                        <img src="{{comment.link_profile_image}}" alt=""/>
+                    </figure>
+                    {% endif %}
+
+                    <h4>
+                        {{comment.username}}
+                        <spa>
+                            {{comment.created | date:"d/m/Y h:i a"}}
+                        </spa>
+                    </h4>
+                    <p>
+                        {{comment.comment}}
+                    </p>
+                    <hr/>
+
+                 {% empty %}
+                <p>No hay comentarios por el momento</p>
+
+                {% endfor %}
+
+            </div>
+            {% endif %}
+        </section>
+
+	</section>
+
+    <section class="row tablet-page">
+
+		<section class="medium-12 columns detail-images-tablet custom-content-wrapper">
+             <!-- Go to www.addthis.com/dashboard to customize your tools -->
+             <div class="addthis_sharing_toolbox"></div>
+            <h2>{{tutorial_detail.title}}</h2>
+            {% if tutorial_detail.is_image %}
+			<figure>
+				<img src="{% thumbnail tutorial_detail.photo 1000x400 %}"  alt="" >
+			</figure>
+            {% endif %}
+            <div>
+                {{tutorial_detail.description | safe}}
+            </div>
+		</section>
+
+        <section class="medium-12 columns comments-area-wrapper">
+            <div class="comments-area">
+                <h3>About the author</h3>
+                <figure>
+                    <img src="{% static 'images/erwilli.jpg' %}" alt=""/>
+                </figure>
+
+                <h4>
+                    {{info_author.0.name | title}} {{info_author.0.lastname | title}}
+                </h4>
+
+                <p>
+                    {{info_author.0.post_description}}
+                </p>
+            </div>
+        </section>
+
+
+        <section class="medium-12 columns comments-area-wrapper">
+
+            <div class="comments-area comments-login">
+                <h3>
+                    Quieres Comentar sobre el tutorial:
+                </h3>
+                <div class="large-12 columns social-buttons-wrapper">
+                    <div class="social-button twitter-button" data-name="twitter">
+                        <p>Twitter</p>
+                    </div>
+                    <div class="social-button facebook-button" data-name="facebook">
+                        <p>Facebook</p>
+                     </div>
+                </div>
+
+                <div id="form-comment-wrapper-tablet">
+                    <figure class="social-picture-tablet">
+                          <img src="{% static 'images/erwilli.jpg' %}" data-network="" data-id-tutorial="{{tutorial_detail.id}}" alt="" width="73"/>
+                    </figure>
+                    <h4 class="social-name-tablet">
+                        <span></span>
+                         <a href="">logout</a>
+                    </h4>
+
+                    <form id="form-comment-tablet">
+                       <textarea placeholder="Your comment here" class="contact" id="comment-tablet" name="comment" rows="10" cols="50"></textarea>
+                        <button class="info right custom-comment-btn">Comentar</button>
+                    </form>
+                </div>
+            </div>
+
+            {% if tutorial_detail.is_comment  %}
+            <div class="comments-area" id="wrapper-comments-tablet">
+                <h3>Comentarios <span>({{comment_counter}})</span></h3>
+                {% for comment in comments %}
+                    {% if comment.destination == 'facebook' %}
+                    <figure>
+                        <img src="{{comment.link_profile_image|add:'?type=large'}}" alt=""/>
+                    </figure>
+                    {% endif %}
+
+                    {% if comment.destination == 'twitter' %}
+                    <figure>
+                        <img src="{{comment.link_profile_image}}" alt=""/>
+                    </figure>
+                    {% endif %}
+
+                    <h4>
+                        {{comment.username}}
+                        <spa>
+                            {{comment.created | date:"d/m/Y h:i a"}}
+                        </spa>
+                    </h4>
+                    <p>
+                        {{comment.comment}}
+                    </p>
+                    <hr/>
+
+                 {% empty %}
+                <p>No hay comentarios por el momento</p>
+
+                {% endfor %}
+
+            </div>
+            {% endif %}
+        </section>
+
 	</section>
 
 	<section class="row web-page">

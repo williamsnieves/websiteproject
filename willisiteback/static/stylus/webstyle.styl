@@ -345,7 +345,7 @@ header
 
 @media screen and (max-width:679px)
 
-	.detail-images-tablet
+	.detail-images-small
 		position relative
 		padding 0
 		figure
@@ -651,6 +651,86 @@ header
 	
 	.lab-image-content figure:hover figcaption
 		opacity 1
+	
+
+	.custom-content-wrapper
+		border-bottom 1px solid #eee
+		border-right 1px solid #eee
+		border-left 1px solid #eee
+		padding 2em
+		box-shadow 12px 0 15px -4px rgba(194, 194, 194, 0.8), -12px 0 8px -4px rgba(194, 194, 194, 0.8)
+	
+	.comments-area-wrapper
+		padding 0
+
+	.comments-area
+		box-shadow 12px 0 15px -4px rgba(194, 194, 194, 0.8), -12px 0 8px -4px rgba(194, 194, 194, 0.8)
+		padding 2em
+		margin 1em 0 0 0
+		h4
+			margin-top 1.5em
+		figure
+			width 16%
+			float left
+			margin 1em 2em 2em 0em
+			img
+				width 100%
+				border-radius 50%
+				border 2px solid blue_medium
+	
+	.comments-login
+		overflow hidden
+				
+	.twitter-button
+		width 100%
+		background #40a2d1
+		padding 7px 0 9px 0
+		color white_color
+		opacity 0.8
+		float left
+		transition 0.1s all ease-out
+		p
+			text-align center
+			margin 0
+		&:hover
+			cursor pointer
+			opacity 1
+	
+	.facebook-button
+		width 100%
+		background #354f88
+		padding 7px 0 9px 0
+		color white_color
+		transition 0.1s all ease-out
+		float left
+		opacity 0.8		
+		p
+			text-align center
+			margin 0
+		&:hover
+			cursor pointer
+			opacity 1
+	
+	.hideCommentButtons
+		display none
+	.showCommentForm
+		display block
+	
+	.custom-comment-btn
+		margin-top 1em
+		color white_color
+		background blue_medium
+	
+
+	#form-comment-wrapper-small
+		display none
+
+	#form-comment-wrapper-small .social-name-small
+		margin-top 1em
+		float left
+		a
+			font-size 0.7em
+			margin 0 0 0 1em
 
 
 
@@ -1020,12 +1100,28 @@ header
 		margin-top 1em
 		color white_color
 		background blue_medium
+		
+	.tut-image-content-tablet figure figcaption
+		position absolute
+		-webkit-transition all 0.35s ease
+		transition all 0.35s ease		
+		width 100%		
+		background rgba(0,0,0,0.7)
+		h3
+			color white_color
+			margin 0em 0.5em 0 0.5em
+		p
+			color white_color
+			margin 0 1.5em 0 1.5em
+	
+	.tut-image-content-tablet figure:hover figcaption
+		top 120px		
 	
 
 	#form-comment-wrapper-tablet
 		display none
 
-	#form-comment-wrapper-tablet .social-name
+	#form-comment-wrapper-tablet .social-name-tablet
 		margin-top 1em
 		float left
 		a
@@ -1171,6 +1267,8 @@ header
 		width 25%
 	.item.w2
 		width 50%
+		
+	
 
 	.box
 		float left
@@ -1297,16 +1395,16 @@ header
 			opacity 1
 			-webkit-transform translate3d(0,0,0)
 			transform: translate3d(0,0,0)
+	
+	
 			
 	.detail-images-tablet
-		position relative
-		padding 0
+		position relative		
 		figure
 			position relative
 			margin 0
 			img
-				width 100%
-				height 870px
+				width 100%				
 		figcaption
 			width 100%
 			opacity 0.7

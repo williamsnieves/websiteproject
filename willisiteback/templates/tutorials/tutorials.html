@@ -2,6 +2,164 @@
 {% load thumbnail %}
 {% load static from staticfiles %}
 {% block content %}
+
+        <section class="row small-page">
+            <div id="container-small-wall" class="free-wall">
+                {% for tuts in tutorial_list %}
+                    {% if tuts.is_thumb_image %}
+                        <div class="box lab-image-content">
+                            <figure>
+                                <img src="{% thumbnail tuts.thumb tuts.thumb_dims %}" alt="">
+                                <figcaption>
+                                    <a href="{{tuts.slug}}">
+                                        <h3>{{tuts.title}}</h3>
+                                    </a>
+                                    <p>{{tuts.shortdesc}}</p>
+                                </figcaption>
+                            </figure>
+
+                        </div>
+                    {% endif %}
+
+                    {% if tuts.is_medium %}
+                        <div class="box w2 text-content-lab-medium">
+                            <a href="{{tuts.slug}}">
+                                <h3>{{tuts.title}}</h3>
+                            </a>
+                            <p>
+                                {{tuts.shortdesc}}
+                            </p>
+
+                        </div>
+                    {% endif %}
+
+                    {% if tuts.is_light %}
+                        <div class="box w2 text-content-lab-light">
+                            <a href="{{tuts.slug}}">
+                                <h3>{{tuts.title}}</h3>
+                            </a>
+                            <p>
+                                {{tuts.shortdesc}}
+                            </p>
+
+                        </div>
+                    {% endif %}
+
+                    {% if tuts.is_normal %}
+                        <div class="box w2 text-content-lab">
+                             <a href="{{tuts.slug}}">
+                                <h3>{{tuts.title}}</h3>
+                            </a>
+                            <p>
+                                {{tuts.shortdesc}}
+                            </p>
+
+                        </div>
+                    {% endif %}
+
+                {% empty %}
+
+                <div data-alert class="alert-box info">
+                    No hay tutoriales disponibles
+                    <a href="#" class="close">&times;</a>
+                </div>
+
+                <!--<div class="box w2 text-content-lab-light">
+                    <h3>{{tuts.name}}</h3>
+                    <p>
+                        {{tuts.description}}
+                    </p>
+
+                </div>
+                <div class="box text-content-lab">
+                    <h3>{{tuts.name}}</h3>
+                    <p>
+                         {{tuts.description}}
+                    </p>
+                </div>-->
+                {% endfor %}
+
+            </div>
+	</section>
+
+        <section class="row tablet-page">
+            <div id="container-tablet-wall" class="free-wall">
+                {% for tuts in tutorial_list %}
+                    {% if tuts.is_thumb_image %}
+                        <div class="box lab-image-content">
+                            <figure>
+                                <img src="{% thumbnail tuts.thumb tuts.thumb_dims %}" alt="">
+                                <figcaption>
+                                    <a href="{{tuts.slug}}">
+                                        <h3>{{tuts.title}}</h3>
+                                    </a>
+                                    <p>{{tuts.shortdesc}}</p>
+                                </figcaption>
+                            </figure>
+
+                        </div>
+                    {% endif %}
+
+                    {% if tuts.is_medium %}
+                        <div class="box w2 text-content-lab-medium">
+                            <a href="{{tuts.slug}}">
+                                <h3>{{tuts.title}}</h3>
+                            </a>
+                            <p>
+                                {{tuts.shortdesc}}
+                            </p>
+
+                        </div>
+                    {% endif %}
+
+                    {% if tuts.is_light %}
+                        <div class="box w2 text-content-lab-light">
+                            <a href="{{tuts.slug}}">
+                                <h3>{{tuts.title}}</h3>
+                            </a>
+                            <p>
+                                {{tuts.shortdesc}}
+                            </p>
+
+                        </div>
+                    {% endif %}
+
+                    {% if tuts.is_normal %}
+                        <div class="box w2 text-content-lab">
+                             <a href="{{tuts.slug}}">
+                                <h3>{{tuts.title}}</h3>
+                            </a>
+                            <p>
+                                {{tuts.shortdesc}}
+                            </p>
+
+                        </div>
+                    {% endif %}
+
+                {% empty %}
+
+                <div data-alert class="alert-box info">
+                    No hay tutoriales disponibles
+                    <a href="#" class="close">&times;</a>
+                </div>
+
+                <!--<div class="box w2 text-content-lab-light">
+                    <h3>{{tuts.name}}</h3>
+                    <p>
+                        {{tuts.description}}
+                    </p>
+
+                </div>
+                <div class="box text-content-lab">
+                    <h3>{{tuts.name}}</h3>
+                    <p>
+                         {{tuts.description}}
+                    </p>
+                </div>-->
+                {% endfor %}
+
+            </div>
+	</section>
     <section class="row web-page">
 		<div id="container-wall" class="free-wall">
             {% for tuts in tutorial_list %}
