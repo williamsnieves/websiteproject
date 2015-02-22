@@ -2447,17 +2447,7 @@ header
 	.fifth-skill
 		margin 15.5em 0 0 11.5em
 	
-	.first-skill-right
-		margin 0 0 0 10em
 
-	.second-skill-right
-		margin 3.5em 0 0 15em
-	
-	.third-skill-right
-		margin 7.5em 0 0 13em
-	
-	.fourth-skill-right
-		margin 11.5em 0 0 14em
 	
 	.skill-image-right
 		background white_color
@@ -2483,7 +2473,63 @@ header
 		&:nth-child(5)
 			top 13em
 			right 0
-			margin 0.5em 14% 0 21em						
+			margin 0.5em 14% 0 21em
+			
+	.effect-ctegory a 
+		padding 10px
+		color #237546
+		font-weight 700
+		text-shadow none
+		-webkit-transition color 0.3s
+		-moz-transition color 0.3s
+		transition color 0.3s
+		
+
+	.effect-ctegory a::before,
+	.effect-ctegory a::after
+		position absolute
+		left 0
+		width 100%
+		height 2px
+		background #fff
+		content ''
+		opacity 0
+		-webkit-transition opacity 0.3s, -webkit-transform 0.3s
+		-moz-transition opacity 0.3s, -moz-transform 0.3s
+		transition opacity 0.3s, transform 0.3s
+		-webkit-transform translateY(-10px)
+		-moz-transform translateY(-10px)
+		transform translateY(-10px)
+	
+
+	.effect-ctegory a::before
+		top 0
+		-webkit-transform translateY(-10px)
+		-moz-transform translateY(-10px)
+		transform translateY(-10px)
+	
+
+	.effect-ctegory a::after
+		bottom 0
+		-webkit-transform translateY(10px)
+		-moz-transform translateY(10px)
+		transform translateY(10px)
+	
+
+	.effect-ctegory a:hover,
+	.effect-ctegory a:focus 
+		color #fff
+	
+
+	.effect-ctegory a:hover::before,
+	.effect-ctegory a:focus::before,
+	.effect-ctegory a:hover::after,
+	.effect-ctegory a:focus::after 
+		opacity 1
+		-webkit-transform translateY(0px)
+		-moz-transform translateY(0px)
+		transform translateY(0px)
+						
 	
 	#form-comment-wrapper
 		display none
