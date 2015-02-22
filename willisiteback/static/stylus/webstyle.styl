@@ -200,8 +200,12 @@ header
 	h3
 		margin 0
 		position relative
-		top 50%
+		top 40%
 		text-align center
+		a			
+			color dark_gray
+			display block
+			font-size 2em				
 	&:nth-child(1)
 		background #2fa5e2;
 	&:nth-child(2)
@@ -267,6 +271,16 @@ header
 	transition: opacity .4s;
 	background-position: center center;
 
+.mesh-image-web
+	background blue_strong	
+
+.mesh-image-mobile
+	background blue_strong	
+
+.mesh-image-games
+	background blue_strong	
+
+
 .image-cat
 	&:hover .mesh-image
 		-webkit-transform scale(1)
@@ -274,6 +288,51 @@ header
 		transform scale(1)
 		-webkit-transition -webkit-transform 0s linear
 		transition transform 0s linear
+		
+
+.web-social-contact
+		width 100%
+		margin 1em auto 2em auto
+		text-align center
+		
+	
+.icon-phone
+	margin 0 0.3em 0 0
+	position relative
+	top 0.2em
+
+.icon-linkedin
+	margin 0 0 0 0.2em
+	position relative
+	top .2em
+
+.icon-github
+	margin 0 0 0 0.2em
+	position relative
+	top .2em
+
+.icon-stackoverflow
+	margin 0 0 0 0.2em
+	position relative
+	top .2em
+	
+.icon-twitter
+	margin 0 0 0 0.2em
+	position relative
+	top .2em
+	
+	
+.icon-mail
+	position relative
+	top .5em
+
+.web-phone-contact
+	display inline-block
+	p
+		margin 0
+		font-size 0.7em
+	div
+		float right
 
 
 #line-input-name
@@ -300,7 +359,7 @@ header
 .center-buttton-form
 	display block
 	width 114px
-	margin 0 auto
+	margin 0 auto 2em auto
 	border-radius 0.5em
 	background transparent
 	color #4e4e4e
@@ -322,7 +381,44 @@ header
 	padding 0
 
 .brain-wrapper-web
-	display none
+	display none 
+	
+
+.detail-images-tablet
+		position relative
+		padding 0		
+		figure
+			position relative
+			margin 0
+			img
+				width 100%				
+		figcaption
+			width 100%
+			opacity 0.7
+			background-color rgba(0, 0, 0, 0.7)
+			background black_color
+			position absolute
+			bottom 0
+			left 0
+			p, h2, span
+				color white_color
+				opacity 1
+			h2
+				margin 1em 0 0 1em
+			p
+				margin 1em 2.5em 0 2.5em
+				
+
+.grid-button-tablet
+		background dark_gray
+		width 44px
+		height 44px
+		border-radius 0.5em 0 0 0.5em
+		position absolute
+		top 2em
+		right 0
+	
+
 
 
 #line-input-name
@@ -1115,7 +1211,51 @@ header
 			margin 0 1.5em 0 1.5em
 	
 	.tut-image-content-tablet figure:hover figcaption
-		top 120px		
+		top 120px
+		
+
+	.web-social-contact
+		width 100%
+		margin 2em auto 0 auto
+		
+	
+	.icon-phone
+		margin 0 0.3em 0 0
+		position relative
+		top 0.2em
+	
+	.icon-linkedin
+		margin 0 0 0 0.2em
+		position relative
+		top .2em
+	
+	.icon-github
+		margin 0 0 0 0.2em
+		position relative
+		top .2em
+	
+	.icon-stackoverflow
+		margin 0 0 0 0.2em
+		position relative
+		top .2em
+		
+	.icon-twitter
+		margin 0 0 0 0.2em
+		position relative
+		top .2em
+		
+		
+	.icon-mail
+		position relative
+		top .5em
+	
+	.web-phone-contact
+		display inline-block
+		p
+			margin 0
+			font-size 0.7em
+		div
+			float right		
 	
 
 	#form-comment-wrapper-tablet
@@ -1926,25 +2066,14 @@ header
 					color white_color
 		&:nth-child(2)
 			background blue_medium
-			position relative
-			/*position absolute
-			left 20em
-			z-index 99999
-			width 41%
-			transform skew(-14deg)
-			-webkit-transform skew(-14deg)*/
+			position relative	
 			h2
 				position relative
 				top 37%
-				text-align center
-				transform skew(14deg)
-				-webkit-transform skew(14deg)
-				//position relative
-				//bottom -10em
-				//margin 0 auto
+				text-align center			
 				a					
 					color white_color
-					//display block
+					
 		&:nth-child(3)
 			background blue_light
 			position relative
@@ -2152,7 +2281,7 @@ header
 			text-align center
 			
 	.web-social-contact
-		width 30%
+		width 100%
 		margin 2em auto 0 auto
 		
 	

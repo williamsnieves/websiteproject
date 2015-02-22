@@ -58,21 +58,23 @@
 
 		<section class="small-12">
 			<section class="potfolio-categories">
+                {% for category in categories %}
 				<div class="item-categories">
-					<div class="image-cat" style="background-image: url(http://lorempixel.com/640/480/technics/)"></div>
-					<div class="mesh-image" style="background-color: #2fa5e2;"></div>
-					<h3>MOVIL</h3>
+					<div class="image-cat" style="background-image: url({% static category.url %})"></div>
+					<div class="mesh-image mesh-image-{{category}}"></div>
+					<h3>{{category}}</h3>
 				</div>
-				<div class="item-categories">
+                {% endfor %}
+				<!--<div class="item-categories">
 					<div class="image-cat" style="background-image: url(http://lorempixel.com/640/480/business/)"></div>
-					<div class="mesh-image" style="background-color: #c2ee5b;"></div>
+					<div class="mesh-image mesh-image-2"></div>
 					<h3>WEB</h3>
 				</div>
 				<div class="item-categories">
 					<div class="image-cat" style="background-image: url(http://lorempixel.com/640/480/abstract/)"></div>
-					<div class="mesh-image" style="background-color: #2effe0;"></div>
+					<div class="mesh-image mesh-image-3"></div>
 					<h3>GAMES</h3>
-				</div>
+				</div>-->
 			</section>
 		</section>
 		<section class="small-12" id="contacto">
@@ -108,6 +110,29 @@
 
 				</form>
 			</div>
+
+            <div class="small-12 columns">
+                <div class="web-social-contact">
+                    <div class="web-phone-contact">
+                        <span class="icon-phone">
+                        </span>
+                        <div>
+                            <p>+584142144310</p>
+                            <p>+582124819395</p>
+                        </div>
+
+                    </div>
+
+                    <a href="http://twitter.com"><span class="icon-twitter"></span></a>
+                    <a href="http://linkedin.com" target="blank"><span class="icon-linkedin"></span></a>
+                    <a href="http://github.com"><span class="icon-github"></span></a>
+                    <a href="http://careers.stackoverflow.com/williansnieves"><span class="icon-stackoverflow"></span></a>
+                </div>
+
+            </div>
+
+
+
 		</section>
 	</section>
 

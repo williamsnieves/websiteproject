@@ -490,7 +490,9 @@ $(function(){
 
 	displayMoreProfile();
 
-
+    if(width >=  680){
+        $(".main-menu").hide();
+    }
 
     if(width >= 1000){
         socialLogin();

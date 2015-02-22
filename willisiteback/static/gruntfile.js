@@ -20,6 +20,9 @@ module.exports = function(grunt){
         	},
         	target: {
             	command: 'stylus -c -w -o css/ stylus/webstyle.styl'
+        	},
+            targetfont: {
+            	command: 'stylus -c -w -o css/ stylus/font.styl'
         	}
 		},
 		/*nodemon: {

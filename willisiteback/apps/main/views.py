@@ -17,6 +17,8 @@ from apps.skills.models import Skill
 from django import http
 import json
 from django.core import serializers
+from django.core.urlresolvers import resolve
+
 
 class HomeViewMixin(object):
 
@@ -28,6 +30,15 @@ class HomeViewMixin(object):
 
         context['profile'] = profile
         context['skills'] = skills
+
+        categories = Category.objects.all()
+        context['categories'] = categories
+
+        current_url = resolve(self.request.path_info).url_name
+
+        context['current_url'] = current_url
+
+
 
         for prof in profile:
             listdesc = prof.category_list_short.split(",")
@@ -58,6 +69,9 @@ class PortFolioViewMixin(object):
         context = super(PortFolioViewMixin, self).get_context_data(**kwargs)
         categories = Category.objects.all()
         context['categories'] = categories
+        current_url = resolve(self.request.path_info).url_name
+
+        context['current_url'] = current_url
         return context
 
 class PortfolioView(PortFolioViewMixin, TemplateView):
@@ -73,6 +87,9 @@ class LabsView(ListView):
     def get_context_data(self, **kwargs):
         context = super(LabsView, self).get_context_data(**kwargs)
         context['isImage'] = True
+        current_url = resolve(self.request.path_info).url_name
+
+        context['current_url'] = current_url
         return context
 
 class DetailLabsView(DetailView):
@@ -85,6 +102,9 @@ class DetailLabsView(DetailView):
         context['isImage'] = True
         context["info_author"] = Biography.objects.all()
         context["comment_counter"] = Comment.objects.filter(lab_id=self.object.id).count()
+        current_url = resolve(self.request.path_info).url_name
+
+        context['current_url'] = current_url
         self.object = self.get_object()
         context["comments"] = Comment.objects.filter(lab_id=self.object.id)
         return context
@@ -104,6 +124,9 @@ class TutorialView(ListView):
 
     def get_context_data(self, **kwargs):
         context = super(TutorialView, self).get_context_data(**kwargs)
+        current_url = resolve(self.request.path_info).url_name
+
+        context['current_url'] = current_url
         return context
 
 class DetailTutorialView(DetailView):
@@ -116,6 +139,9 @@ class DetailTutorialView(DetailView):
         context = super(DetailTutorialView, self).get_context_data(**kwargs)
         context["info_author"] = Biography.objects.all()
         context["comment_counter"] = Comment.objects.filter(tutorial_id=self.object.id).count()
+        current_url = resolve(self.request.path_info).url_name
+
+        context['current_url'] = current_url
 
         self.object = self.get_object()
         context["comments"] = Comment.objects.filter(tutorial_id=self.object.id)

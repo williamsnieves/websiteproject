@@ -5,39 +5,40 @@
 			<section class="potfolio-categories">
 
                     <div class="item-categories">
-                        <div class="image-cat image-cat-1" style="background-image: url(http://lorempixel.com/640/480/technics/)"></div>
+                        <div class="image-cat image-cat-1" style="background-image: url({% static categories.1.url %})"></div>
                         <div class="mesh-image mesh-image-1"></div>
                          <h3>
-                             <a href="{{categories.1}}">{{categories.1}}</a>
+                             <a href="{{categories.1}}">{{categories.1 | title}}</a>
                         </h3>
                     </div>
 
 				<div class="item-categories">
-					<div class="image-cat" style="background-image: url(http://lorempixel.com/640/480/business/)"></div>
+					<div class="image-cat" style="background-image: url({% static categories.0.url %})"></div>
 					<div class="mesh-image mesh-image-2"></div>
 					 <h3>
-                             <a href="{{categories.0}}">{{categories.0}}</a>
+                             <a href="{{categories.0}}">{{categories.0 | title}}</a>
                         </h3>
 				</div>
 				<div class="item-categories">
-					<div class="image-cat" style="background-image: url(http://lorempixel.com/640/480/abstract/)"></div>
+					<div class="image-cat" style="background-image: url({% static categories.2.url %})"></div>
 					<div class="mesh-image mesh-image-3"></div>
 					 <h3>
-                             <a href="{{categories.2}}">{{categories.2}}</a>
+                             <a href="{{categories.2}}">{{categories.2 | title}}</a>
                      </h3>
 				</div>
 			</section>
 		</section>
 
     <section class="row tablet-page">
-        {% for cat in categories %}
-            <section class="medium-12 columns portfolio-first-tablet">
-                <h2>
-                <a href="{{cat}}">{{cat | title}}</a>
-            </h2>
-            </section>
-
-        {% endfor %}
+        {% for category in categories %}
+				<div class="item-categories">
+					<div class="image-cat" style="background-image: url({% static category.url %})"></div>
+					<div class="mesh-image mesh-image-{{category}}"></div>
+					<h3>
+                        <a href="{{category}}">{{category | title}}</a>
+                    </h3>
+				</div>
+                {% endfor %}
 	</section>
 
 	<section class="row-fluid web-page">
