@@ -1,9 +1,9 @@
 {% extends 'base.html' %}
 {% load static from staticfiles %}
 {% block content %}
+    <div class="addthis_sharing_toolbox"></div>
     <section class="row small-page">
 		<section class="small-12 columns detail-images-tablet">
-            <div class="addthis_sharing_toolbox"></div>
 			<figure>
 				<img src="{% static 'images/detailimg1tablet.jpg' %}" alt="">
 				<figcaption>
@@ -16,15 +16,19 @@
 				<a href="../"><span class="icon-grid"></span></a>
 			</div>
 		</section>
+        <section class="small-12 columns share-box">
+            <!-- Go to www.addthis.com/dashboard to customize your tools -->
+            <h4>Compartir:</h4>
+            <div class="addthis_native_toolbox"></div>
+        </section>
 	</section>
 
     <section class="row tablet-page">
 		<section class="medium-12 columns detail-images-tablet">
-            <div class="addthis_sharing_toolbox"></div>
 			<figure>
 				<img src="{% static 'images/detailimg1tablet.jpg' %}" alt="">
 				<figcaption>
-					<h2>{{portfolio_detail.title}}</h2>
+                    <h2>{{portfolio_detail.title}}</h2>
 					<p> {{portfolio_detail.description}}</p>
 					<a href=""><span class="icon-arrow-down"></span></a>
 				</figcaption>
@@ -37,11 +41,16 @@
 				<a href=""><span class="icon-arrow-right"></span></a>
 			</div>
 		</section>
+        <section class="small-12 columns share-box">
+            <!-- Go to www.addthis.com/dashboard to customize your tools -->
+            <h4>Compartir:</h4>
+            <div class="addthis_native_toolbox"></div>
+        </section>
+
 	</section>
 
 	<section class="row web-page">
 		<section class="medium-12 columns detail-images-tablet">
-            <div class="addthis_sharing_toolbox"></div>
 			<figure>
 				<img src="{% static 'images/detailimg1tablet.jpg' %}" alt="">
 				<figcaption>
@@ -63,5 +72,8 @@
 {% block libs %}
         <!-- Go to www.addthis.com/dashboard to customize your tools -->
     <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-54b537341c6f6073" async="async"></script>
+
+
+
 
 {% endblock libs %}

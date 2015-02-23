@@ -62,7 +62,9 @@
 				<div class="item-categories">
 					<div class="image-cat" style="background-image: url({% static category.url %})"></div>
 					<div class="mesh-image mesh-image-{{category}}"></div>
-					<h3>{{category}}</h3>
+					<h3>
+                        <a href="/portfolio/{{category}}">{{category | title}}</a>
+                    </h3>
 				</div>
                 {% endfor %}
 				<!--<div class="item-categories">
@@ -97,8 +99,7 @@
 
 				    <div class="small-12 columns less-padding">
 				      <label>Mensaje
-				      	<textarea class="contact" id="line-input-message" rows="10" cols="50">
-				      	</textarea>
+				      	<textarea class="contact" id="line-input-message" rows="10" cols="50"></textarea>
 				      </label>
 				    </div>
 
@@ -123,10 +124,10 @@
 
                     </div>
 
-                    <a href="http://twitter.com"><span class="icon-twitter"></span></a>
-                    <a href="http://linkedin.com" target="blank"><span class="icon-linkedin"></span></a>
-                    <a href="http://github.com"><span class="icon-github"></span></a>
-                    <a href="http://careers.stackoverflow.com/williansnieves"><span class="icon-stackoverflow"></span></a>
+                    <a href="https://twitter.com/mrsnow85"><span class="icon-twitter"></span></a>
+                    <a href="https://www.linkedin.com/pub/willians-nieves/43/206/84a" target="blank"><span class="icon-linkedin"></span></a>
+                    <a href="https://github.com/williamsnieves"><span class="icon-github"></span></a>
+                    <a href="https://careers.stackoverflow.com/williansnieves"><span class="icon-stackoverflow"></span></a>
                 </div>
 
             </div>
