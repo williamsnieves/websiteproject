@@ -30,7 +30,7 @@ urlpatterns = patterns('',
     # Examples:
     # url(r'^$', 'willisiteback.views.home', name='home'),
     # url(r'^blog/', include('blog.urls')),
-    url(r'^admin/', include(admin.site.urls)),
+    url(r'^officewilli/', include(admin.site.urls)),
     url(r'^api/', include(router.urls)),
     url('', include('apps.main.urls')),
     url(r'^ckeditor/', include('ckeditor.urls')),
