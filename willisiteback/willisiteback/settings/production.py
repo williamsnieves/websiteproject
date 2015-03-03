@@ -7,12 +7,6 @@ DEBUG = False
 #ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'http://127.0.0.1:8000/', 'http://localhost:8000/']
 TEMPLATE_DEBUG = DEBUG
 
-
-REST_FRAMEWORK = {
-    'DEFAULT_FILTER_BACKENDS': ('rest_framework.filters.DjangoFilterBackend',)
-}
-
-
 # Application definition
 
 INSTALLED_APPS = (
@@ -28,7 +22,6 @@ INSTALLED_APPS = (
     'easy_thumbnails',
     'mptt',
     'django_extensions',
-    'rest_framework',
     'apps.biography',
     'apps.skills',
     'apps.categories',
