@@ -4,7 +4,7 @@ SECRET_KEY = get_env_variable("SOME_SECRET_KEY")
 DJANGO_SETTINGS_MODULE = get_env_variable("DJANGO_SETTINGS_MODULE")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
-#ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'http://127.0.0.1:8000/', 'http://localhost:8000/']
+ALLOWED_HOSTS = ['williansnieves.com']
 TEMPLATE_DEBUG = DEBUG
 
 # Application definition
@@ -70,8 +70,8 @@ DATABASES = {
     'default': {
         'ENGINE':'django.db.backends.postgresql_psycopg2',
         'NAME': 'willisite',
-        'USER': 'postgres',
-        'PASSWORD': '1234',
+        'USER': 'mrwill',
+        'PASSWORD': 'ERwilli1729..',
         'HOST': 'localhost',
         'PORT': '5432',
     }
