@@ -118,7 +118,7 @@ TEMPLATE_LOADERS = (
 # https://docs.djangoproject.com/en/1.7/howto/static-files/
 
 STATIC_URL = '/static/'
-STATIC_ROOT = '/webapps/static_files/'
+STATIC_ROOT = '/home/mrsnow/webapps/static_files/'
 
 
 # Additional locations of static files
