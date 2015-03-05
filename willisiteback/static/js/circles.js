@@ -1,8 +1,7 @@
-$(function(){
-
-
-	window.onload = function(){
-		var target;
+$(document).ready(function(){
+   $(".skill-image-right").show();
+   $(".skill-image").show();
+   var target;
 		var circleLeftOne = new ProgressBar.Circle('#skill-left-1', {
     	color: '#00b4cc',
     	strokeWidth: 10,
@@ -456,15 +455,4 @@ $(function(){
 	});
 
 	circleRightFour.animate(1);
-
-
-
-	}
-
-
-
-
-	/*circle2.animate(1, function(){
-		circle2.animate();
-	});*/
 })
