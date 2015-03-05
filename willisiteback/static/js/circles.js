@@ -1,4 +1,6 @@
 $(document).ready(function(){
+   $(".loader-skills-left").hide();
+    $(".loader-skills-right").hide();
    $(".skill-image-right").show();
    $(".skill-image").show();
    var target;
