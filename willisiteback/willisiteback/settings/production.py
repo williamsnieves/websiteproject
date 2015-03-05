@@ -126,7 +126,7 @@ STATICFILES_DIRS = (
     # Put strings here, like "/home/html/static" or "C:/www/django/static".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
-    '/home/mrsnow/webapps/static_files/static/',
+    '/home/mrsnow/webapps/websiteproject/websiteproject/willisiteback/static/',
 )
 
 # List of finder classes that know how to find static files in
@@ -136,6 +136,7 @@ STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
 )
 
+ADMIN_MEDIA_PREFIX = '/static/admin/'
 #STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.CachedStaticFilesStorage'
 #MEDIA_ROOT = os.sep.join(os.path.abspath(__file__).split(os.sep)[:2] + ['media'])
 #MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
