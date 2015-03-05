@@ -118,7 +118,7 @@ TEMPLATE_LOADERS = (
 # https://docs.djangoproject.com/en/1.7/howto/static-files/
 
 STATIC_URL = '/static/'
-STATIC_ROOT = '/home/mrsnow/webapps/static_files/'
+STATIC_ROOT = '/home/mrsnow/webapps/static_files/static/'
 
 
 # Additional locations of static files
@@ -126,7 +126,7 @@ STATICFILES_DIRS = (
     # Put strings here, like "/home/html/static" or "C:/www/django/static".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
-    'static',
+    '/home/mrsnow/webapps/static_files/static/',
 )
 
 # List of finder classes that know how to find static files in
@@ -136,10 +136,10 @@ STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
 )
 
-STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.CachedStaticFilesStorage'
+#STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.CachedStaticFilesStorage'
 #MEDIA_ROOT = os.sep.join(os.path.abspath(__file__).split(os.sep)[:2] + ['media'])
 #MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-MEDIA_ROOT = 'media/'
+MEDIA_ROOT = '/home/mrsnow/webapps/static_files/media/'
 MEDIA_URL = '/media/'
 
 THUMBNAIL_PROCESSORS = (
