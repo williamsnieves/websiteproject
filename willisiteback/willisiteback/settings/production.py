@@ -118,7 +118,7 @@ TEMPLATE_LOADERS = (
 # https://docs.djangoproject.com/en/1.7/howto/static-files/
 
 STATIC_URL = '/static/'
-STATIC_ROOT = '/home/mrsnow/webapps/static_files/static/'
+STATIC_ROOT = '/home/mrsnow/webapps/static_files//'
 
 
 # Additional locations of static files
@@ -140,7 +140,7 @@ ADMIN_MEDIA_PREFIX = '/static/admin/'
 #STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.CachedStaticFilesStorage'
 #MEDIA_ROOT = os.sep.join(os.path.abspath(__file__).split(os.sep)[:2] + ['media'])
 #MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-MEDIA_ROOT = '/home/mrsnow/webapps/static_files/media/'
+MEDIA_ROOT = '/home/mrsnow/webapps/static_media/'
 MEDIA_URL = '/media/'
 
 THUMBNAIL_PROCESSORS = (
