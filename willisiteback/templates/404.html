@@ -8,14 +8,27 @@
     <link href='http://fonts.googleapis.com/css?family=VT323' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" href="{% static 'foundation/css/foundation.css' %}">
     <link rel="stylesheet" href="{% static 'css/errors.css' %}">
+    <style type="text/css">
+			@import url(//fonts.googleapis.com/css?family=Geo);
+			@import url(//fonts.googleapis.com/css?family=Shojumaru|Bangers|Slackey|Ceviche+One);
+
+			*{
+				margin:0;
+				padding: 0;
+			}
+			.hiddenText {
+				font-family: 'Shojumaru';
+				visibility: hidden;
+			}
+	</style>
 </head>
 <body>
 
    <section class="row">
        <section class="large-12 medium-12 small-12 columns">
             <h1>Error 404 Page Not Found</h1>
-            <div id="gamezone">
-
+           <div id="gameDiv">
+            <p class='hiddenText'>.</p>
             </div>
        </section>
    </section>
@@ -23,15 +36,13 @@
 
 	
 	<!--<script src="//localhost:35729/livereload.js"></script>-->
-	<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
-    <script src="{% static 'foundation/js/foundation.min.js' %}"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/phaser/2.2.2/phaser.min.js"></script>
-    <script src="{% static 'foundation/js/foundation.min.js' %}"></script>
+	<script type="text/javascript" src="{% static 'js/game/js/phaser.min.js' %}"></script>
     <script type="text/javascript" src="{% static 'js/game/js/boot.js' %}"></script>
-	<script type="text/javascript" src="{% static 'js/game/js/load.js' %}"></script>
-	<script type="text/javascript" src="{% static 'js/game/js/menu.js' %}"></script>
-	<script type="text/javascript" src="{% static 'js/game/js/play.js' %}"></script>
-	<script type="text/javascript" src="{% static 'js/game/js/game.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/game/js/load.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/game/js/menu.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/game/js/config.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/game/js/play.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/game/js/game.js' %}"></script>
 
 
 
