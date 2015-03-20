@@ -1,7 +1,7 @@
 var playState = {
 	preload: function(){
 		if(game.global.choose === "bgnight"){
-			game.load.spritesheet('player', 'assets/ninjanight.png', 72, 72);
+			game.load.spritesheet('player', 'static/js/game/assets/ninjanight.png', 72, 72);
 		}
 	},
 	create : function(){
