@@ -1,11 +1,12 @@
 {% extends 'base.html' %}
 {% load static from staticfiles %}
+{% load thumbnail %}
 {% block content %}
     <div class="addthis_sharing_toolbox"></div>
     <section class="row small-page">
 		<section class="small-12 columns detail-images-tablet">
 			<figure>
-				<img src="{% static 'images/detailimg1tablet.jpg' %}" alt="">
+				<img src="{% thumbnail portfolio_detail.photo 1000x400 %}" alt="">
 				<figcaption>
 					<h2>{{portfolio_detail.title}}</h2>
 					<p> {{portfolio_detail.description}}</p>
@@ -26,7 +27,7 @@
     <section class="row tablet-page">
 		<section class="medium-12 columns detail-images-tablet">
 			<figure>
-				<img src="{% static 'images/detailimg1tablet.jpg' %}" alt="">
+				<img src="{% thumbnail portfolio_detail.photo 1000x400 %}" alt="">
 				<figcaption>
                     <h2>{{portfolio_detail.title}}</h2>
 					<p> {{portfolio_detail.description}}</p>
@@ -52,7 +53,7 @@
 	<section class="row web-page">
 		<section class="medium-12 columns detail-images-tablet">
 			<figure>
-				<img src="{% static 'images/detailimg1tablet.jpg' %}" alt="">
+				<img src="{% thumbnail portfolio_detail.photo 1000x400 %}" alt="">
 				<figcaption>
 					<h2>{{portfolio_detail.title}}</h2>
 					<p> {{portfolio_detail.description}}</p>
