@@ -1,12 +1,13 @@
 {% extends 'base.html' %}
 {% load static from staticfiles %}
+{% load thumbnail %}
 {% block content %}
     <section class="row small-page">
 		<div id="container-small-wall" class="free-wall">
             {% for categories in category_list %}
 			<div class="box">
 				<figure class="effect-bubba">
-					<img src="{% static 'images/1.png' %}" alt="">
+					<img src="{% thumbnail categories.photo 1000x400 %}" alt="">
 
                     <figcaption>
 						<h2><span>{{categories.title}}</span></h2>
@@ -29,7 +30,7 @@
             {% for categories in category_list %}
 			<div class="box">
 				<figure class="effect-bubba">
-					<img src="{% static 'images/1.png' %}" alt="">
+					<img src="{% thumbnail categories.photo 1000x400 %}" alt="">
 
                     <figcaption>
 						<h2><span>{{categories.title}}</span></h2>
@@ -53,7 +54,7 @@
             {% for categories in category_list %}
 			<div class="box">
 				<figure class="effect-bubba">
-					<img src="{% static 'images/1.png' %}" alt="">
+					<img src="{% thumbnail categories.photo 1000x400 %}" alt="">
 
                     <figcaption>
 						<h2><span>{{categories.title}}</span></h2>
