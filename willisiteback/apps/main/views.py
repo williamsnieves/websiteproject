@@ -62,6 +62,9 @@ class HomeView(HomeViewMixin, TemplateView):
 
     template_name = 'home/home.html'
 
+class GameView(HomeViewMixin, TemplateView):
+
+    template_name = 'games/ninjasurviving.html'
 
 
 class PortFolioViewMixin(object):
