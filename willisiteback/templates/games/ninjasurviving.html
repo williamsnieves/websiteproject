@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+{% load static from staticfiles %}
+
+
+{% block contentHead %}
+<style type="text/css">
+    @import url(//fonts.googleapis.com/css?family=Geo);
+    @import url(//fonts.googleapis.com/css?family=Shojumaru|Bangers|Slackey|Ceviche+One);
+
+    *{
+        margin:0;
+        padding: 0;
+    }
+    .hiddenText {
+        font-family: 'Shojumaru';
+        visibility: hidden;
+    }
+    .centerGame{
+        width: 500px;
+        margin: 0 auto;
+    }
+</style>
+
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="HandheldFriendly" content="true" />
+{% endblock contentHead %}
+{% block content %}
+
+    <section class="row">
+       <section class="large-12 medium-12 small-12 columns">
+           <section class="centerGame">
+            <div id="gameDiv">
+                <p class='hiddenText'>.</p>
+            </div>
+           </section>
+
+       </section>
+   </section>
+{% endblock content %}
+
+     {% block libs%}
+
+        <script type="text/javascript" src="{% static 'games/survivingninja/js/phaser.min.js' %}"></script>
+        <script type="text/javascript" src="{% static 'games/survivingninja/js/boot.js' %}"></script>
+        <script type="text/javascript" src="{% static 'games/survivingninja/js/load.js' %}"></script>
+        <script type="text/javascript" src="{% static 'games/survivingninja/js/menu.js' %}"></script>
+        <script type="text/javascript" src="{% static 'games/survivingninja/js/config.js' %}"></script>
+        <script type="text/javascript" src="{% static 'games/survivingninja/js/play.js' %}"></script>
+        <script type="text/javascript" src="{% static 'games/survivingninja/js/game.js' %}"></script>
+    {% endblock libs%}
