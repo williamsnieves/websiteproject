@@ -53,7 +53,8 @@
 	<section class="row web-page">
 		<section class="medium-12 columns detail-images-tablet">
 			<figure>
-				<img src="{% thumbnail portfolio_detail.photo 2000x400 %}" alt="">
+                {% thumbnail portfolio_detail.photo 1170x927 upscale as thumb %}
+				<img src="{{thumb.url}}" alt="">
 				<figcaption>
 					<h2>{{portfolio_detail.title}}</h2>
 					<p> {{portfolio_detail.description}}</p>
